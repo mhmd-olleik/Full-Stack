@@ -126,6 +126,31 @@ HTML5 • CSS3 • JavaScript • Font Awesome • JSON Data
 
 ---
 
+### 4️⃣ Hamza Restaurant - Fine Dining Website
+
+<img src="https://img.shields.io/badge/Status-Completed-success?style=flat-square"/> <img src="https://img.shields.io/badge/Type-Restaurant-orange?style=flat-square"/>
+
+A stunning restaurant website featuring elegant design, interactive menu filtering, photo gallery, and online reservation system.
+
+**📁 Folder:** `restaurant/`
+
+**✨ Key Features:**
+- 🍽️ Interactive menu with category filtering (Appetizers, Mains, Desserts, Beverages)
+- 📸 Beautiful photo gallery with hover effects
+- 📅 Online reservation form with date/time picker
+- 🎨 Elegant design with Playfair Display typography
+- 📱 Fully responsive with hamburger mobile menu
+- ✨ Smooth scroll animations and transitions
+- 📍 Contact section with business hours & location
+- 🔗 Social media integration
+
+**🛠️ Tech Stack:**
+```
+HTML5 • CSS3 • JavaScript • Google Fonts • Font Awesome
+```
+
+---
+
 ## 📈 GitHub Stats
 
 <div align="center">
@@ -164,6 +189,8 @@ cd "about me"
 cd "lebanonedu-main"
 # or
 cd "update yohmor live"
+# or
+cd "restaurant"
 ```
 
 ---

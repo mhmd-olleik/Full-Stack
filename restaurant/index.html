@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant - Authentic Cuisine & Fine Dining</title>
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h2>Hamza</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Restaurant</h1>
+            <p>Experience the finest authentic cuisine in an elegant atmosphere</p>
+            <div class="hero-buttons">
+                <a href="#menu" class="btn-primary">View Menu</a>
+                <a href="#contact" class="btn-secondary">Reserve Table</a>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Restaurant</h2>
+                    <p>For over two decades, Restaurant has been serving authentic, flavorful cuisine that brings
+                        families and friends together. Our commitment to quality ingredients, traditional recipes, and
+                        exceptional service has made us a beloved destination for food enthusiasts.</p>
+                    <p>Every dish is crafted with passion and attention to detail, ensuring an unforgettable dining
+                        experience that celebrates the rich culinary heritage we proudly represent.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-utensils"></i>
+                            <h4>Authentic Recipes</h4>
+                            <p>Traditional dishes passed down through generations</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-leaf"></i>
+                            <h4>Fresh Ingredients</h4>
+                            <p>Locally sourced, premium quality ingredients</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-heart"></i>
+                            <h4>Family Atmosphere</h4>
+                            <p>Warm, welcoming environment for all occasions</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                        alt="Restaurant Interior">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <h2>Our Menu</h2>
+            <div class="menu-categories">
+                <button class="menu-btn active" data-category="all">All Items</button>
+                <button class="menu-btn" data-category="appetizers">Appetizers</button>
+                <button class="menu-btn" data-category="mains">Main Courses</button>
+                <button class="menu-btn" data-category="desserts">Desserts</button>
+                <button class="menu-btn" data-category="beverages">Beverages</button>
+            </div>
+            <div class="menu-items">
+                <!-- Appetizers -->
+                <div class="menu-item" data-category="appetizers">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1541014741259-de529411b96a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                            alt="Hummus Platter">
+                    </div>
+                    <div class="item-details">
+                        <h4>Traditional Hummus Platter</h4>
+                        <p>Creamy hummus served with fresh pita bread, olives, and vegetables</p>
+                        <span class="price">$12.99</span>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="appetizers">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                            alt="Stuffed Grape Leaves">
+                    </div>
+                    <div class="item-details">
+                        <h4>Stuffed Grape Leaves</h4>
+                        <p>Tender grape leaves filled with rice, herbs, and spices</p>
+                        <span class="price">$10.99</span>
+                    </div>
+                </div>
+
+                <!-- Main Courses -->
+                <div class="menu-item" data-category="mains">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1574484284002-952d92456975?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                            alt="Grilled Lamb">
+                    </div>
+                    <div class="item-details">
+                        <h4>Grilled Lamb Chops</h4>
+                        <p>Tender lamb chops marinated in aromatic spices, served with rice pilaf</p>
+                        <span class="price">$28.99</span>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="mains">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                            alt="Chicken Shawarma">
+                    </div>
+                    <div class="item-details">
+                        <h4>Chicken Shawarma</h4>
+                        <p>Slow-roasted chicken with garlic sauce, wrapped in fresh pita</p>
+                        <span class="price">$18.99</span>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="mains">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                            alt="Seafood Platter">
+                    </div>
+                    <div class="item-details">
+                        <h4>Mediterranean Seafood</h4>
+                        <p>Fresh catch of the day with lemon herbs and seasonal vegetables</p>
+                        <span class="price">$32.99</span>
+                    </div>
+                </div>
+
+                <!-- Desserts -->
+                <div class="menu-item" data-category="desserts">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                            alt="Baklava">
+                    </div>
+                    <div class="item-details">
+                        <h4>Traditional Baklava</h4>
+                        <p>Layers of phyllo pastry with nuts and honey syrup</p>
+                        <span class="price">$8.99</span>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="desserts">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                            alt="Rice Pudding">
+                    </div>
+                    <div class="item-details">
+                        <h4>Rice Pudding</h4>
+                        <p>Creamy rice pudding with cinnamon and rose water</p>
+                        <span class="price">$6.99</span>
+                    </div>
+                </div>
+
+                <!-- Beverages -->
+                <div class="menu-item" data-category="beverages">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                            alt="Mint Tea">
+                    </div>
+                    <div class="item-details">
+                        <h4>Fresh Mint Tea</h4>
+                        <p>Traditional mint tea served in authentic glasses</p>
+                        <span class="price">$4.99</span>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="beverages">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                            alt="Fresh Juice">
+                    </div>
+                    <div class="item-details">
+                        <h4>Fresh Fruit Juices</h4>
+                        <p>Daily selection of freshly squeezed seasonal fruits</p>
+                        <span class="price">$5.99</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                        alt="Restaurant Ambiance">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                        alt="Delicious Food">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                        alt="Chef Cooking">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1578474846511-04ba529f0b88?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                        alt="Dining Experience">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                        alt="Fresh Ingredients">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                        alt="Signature Dish">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>Main Street<br>Downtown District<br>City, State</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+961xxxxxxx</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@restaurant.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Hours</h4>
+                            <p>Mon-Thu: 11AM-10PM<br>Fri-Sat: 11AM-11PM<br>Sun: 12PM-9PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Make a Reservation</h3>
+                    <form id="reservationForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="date" id="date" name="date" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="time" id="time" name="time" required>
+                            </div>
+                            <div class="form-group">
+                                <select id="guests" name="guests" required>
+                                    <option value="">Guests</option>
+                                    <option value="1">1 Guest</option>
+                                    <option value="2">2 Guests</option>
+                                    <option value="3">3 Guests</option>
+                                    <option value="4">4 Guests</option>
+                                    <option value="5">5 Guests</option>
+                                    <option value="6+">6+ Guests</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Special Requests (Optional)"
+                                rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Make Reservation</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Hamza Restaurant</h3>
+                    <p>Experience authentic cuisine in an elegant atmosphere. Join us for an unforgettable dining
+                        experience.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-yelp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i>Main Street, City</p>
+                    <p><i class="fas fa-phone"></i>+961xxxxxxx</p>
+                    <p><i class="fas fa-envelope"></i> info@restaurant.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Restaurant. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
