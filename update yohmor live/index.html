@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="يحمر لايف - المنصة الإلكترونية الرسمية لبلدية يحمر الشقيف في لبنان. اكتشف المؤسسات والمطاعم والخدمات والجمعيات في بلدتنا.">
+    <meta name="keywords" content="يحمر, يحمر الشقيف, بلدية يحمر, لبنان, خدمات, مطاعم, جمعيات">
+    <meta name="author" content="Mohammad Olleik">
+
+    <title>Yohmor Live - يحمر لايف | بلدية يحمر الشقيف</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">
+                <div class="logo-icon">🍃</div>
+                <div class="logo-text">
+                    <h1>Yohmor Live</h1>
+                    <span>يحمر لايف</span>
+                </div>
+            </a>
+
+            <button class="mobile-menu-btn" aria-label="القائمة">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">الرئيسية</a></li>
+                    <li><a href="#notifications">الإشعارات</a></li>
+                    <li><a href="#businesses">الأعمال</a></li>
+                    <li><a href="#about">عن البلدة</a></li>
+                    <li><a href="#contact">تواصل معنا</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-location-dot"></i>
+                <span>يحمر الشقيف - جنوب لبنان</span>
+            </div>
+
+            <h1>
+                مرحباً بكم في
+                <span class="highlight">يحمر لايف</span>
+            </h1>
+
+            <p>
+                المنصة الإلكترونية الرسمية تابعة لجمعية أمواج العطاء الخيرية - اكتشف جميع المؤسسات والمطاعم والخدمات
+                والجمعيات في
+                بلدتنا العزيزة
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#businesses" class="btn btn-primary">
+                    <i class="fas fa-store"></i>
+                    استكشف الأعمال
+                </a>
+                <a href="#notifications" class="btn btn-secondary">
+                    <i class="fas fa-bell"></i>
+                    آخر الإشعارات
+                </a>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number" data-stat="total">0+</div>
+                    <div class="stat-label">عمل مسجل</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" data-stat="institutions">0+</div>
+                    <div class="stat-label">تجارة</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" data-stat="restaurants">0+</div>
+                    <div class="stat-label">مطعم</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" data-stat="services">0+</div>
+                    <div class="stat-label">خدمة</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notifications Section -->
+    <section id="notifications" class="notifications-section">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-bell"></i> <span>الإشعارات</span> والتنبيهات</h2>
+                <p>ابقَ على اطلاع بآخر الأخبار والتحذيرات والإعلانات في بلدتنا</p>
+            </div>
+
+            <div id="notifications-container" class="notifications-container">
+                <!-- Notifications will be rendered here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Businesses Section -->
+    <section id="businesses" class="categories-section">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-briefcase"></i> <span>الأعمال</span> والخدمات</h2>
+                <p>تصفح جميع المؤسسات والمطاعم والخدمات في يحمر الشقيف</p>
+            </div>
+
+            <!-- Search Box -->
+            <div class="search-container">
+                <div class="search-box">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="search-input" placeholder="ابحث عن مؤسسة أو خدمة..." autocomplete="off">
+                    <button id="clear-search" class="clear-btn" style="display: none;">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div id="search-results-count" class="search-results-count"></div>
+            </div>
+
+            <!-- Category Tabs -->
+            <div class="categories-tabs">
+                <button class="category-tab active" data-category="all">
+                    <i class="fas fa-th-large"></i>
+                    الكل
+                </button>
+                <button class="category-tab" data-category="institutions">
+                    <i class="fas fa-building"></i>
+                    المؤسسات
+                </button>
+                <button class="category-tab" data-category="associations">
+                    <i class="fas fa-hands-helping"></i>
+                    الجمعيات
+                </button>
+                <button class="category-tab" data-category="restaurants">
+                    <i class="fas fa-utensils"></i>
+                    المطاعم
+                </button>
+                <button class="category-tab" data-category="services">
+                    <i class="fas fa-concierge-bell"></i>
+                    الخدمات
+                </button>
+            </div>
+
+            <!-- Businesses Grid -->
+            <div id="businesses-grid" class="businesses-grid">
+                <!-- Businesses will be rendered here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>عن <span>يحمر الشقيف</span></h2>
+                    <p>
+                        يحمر الشقيف بلدة لبنانية تقع في قضاء النبطية – جنوب لبنان، وتبعد عن البحر الأبيض المتوسط نحو
+                        20–25 كيلومترًا تقريبًا. يبلغ عدد سكانها حوالي 4,000 نسمة تقريبًا، وقد يرتفع عدد السكان في بعض
+                        المواسم، وتتميّز بطبيعتها الخضراء، وأراضيها الزراعية الخصبة، وقربها من قلعة الشقيف التاريخية،
+                        إضافة إلى مجتمعها المتماسك وموقعها القريب من مدينة النبطية، ما يجعلها بلدة تجمع بين الهدوء
+                        الريفي والأهمية الجغرافية.
+                    </p>
+                    <p>
+                        تهدف منصة يحمر لايف إلى تسهيل التواصل بين أبناء البلدة وتعزيز الأعمال المحلية من خلال توفير دليل
+                        شامل لجميع الخدمات والمؤسسات.
+                    </p>
+
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div>
+                                <h4>سهولة البحث</h4>
+                                <p>ابحث عن أي خدمة بسهولة</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h4>تواصل مباشر</h4>
+                                <p>تواصل عبر الواتساب فوراً</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-bell"></i>
+                            </div>
+                            <div>
+                                <h4>إشعارات فورية</h4>
+                                <p>ابقَ على اطلاع دائم</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div>
+                                <h4>مجتمع متصل</h4>
+                                <p>نربط أبناء البلدة معاً</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-visual">
+                    <div class="about-image-container">
+                        <img src="https://image2url.com/images/1765797548757-416f24d5-ed3c-443b-b578-867eda978969.jpg"
+                            alt="يحمر الشقيف"
+                            onerror="this.src='https://via.placeholder.com/600x450/1a2620/10b981?text=يحمر+الشقيف'">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="notifications-section">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-envelope"></i> <span>تواصل</span> معنا</h2>
+                <p>نحن هنا لمساعدتك - تواصل معنا لأي استفسار أو اقتراح</p>
+            </div>
+
+            <div class="hero-buttons" style="margin-top: 40px;">
+                <a href="https://wa.me/96176865498?text=مرحباً، أريد التواصل معكم" target="_blank"
+                    class="btn btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    تواصل عبر الواتساب
+                </a>
+                <a href="https://www.instagram.com/amwaj.3953630?igsh=OGd2MTB0Nml4dGcy" target="_blank"
+                    class="btn btn-secondary">
+                    <i class="fab fa-instagram"></i>
+                    تابعنا على انستغرام
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>🍃 Yohmor Live - يحمر لايف</h3>
+                    <p>
+                        منصة يحمر لايف التابعة لجمعية أمواج العطاء الخيرية، نهدف إلى تسهيل التواصل وتعزيز الأعمال
+                        المحلية في
+                        بلدتنا العزيزة.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://wa.me/96176865498" target="_blank" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.instagram.com/amwaj.3953630?igsh=OGd2MTB0Nml4dGcy" target="_blank"
+                            aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://facebook.com/yohmorlive" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#notifications">الإشعارات</a></li>
+                        <li><a href="#businesses">الأعمال</a></li>
+                        <li><a href="#about">عن البلدة</a></li>
+                        <li><a href="#contact">تواصل معنا</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>الفئات</h4>
+                    <ul>
+                        <li><a href="#businesses">التجارة</a></li>
+                        <li><a href="#businesses">الجمعيات</a></li>
+                        <li><a href="#businesses">المطاعم</a></li>
+                        <li><a href="#businesses">الخدمات</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Yohmor Live - يحمر لايف. جميع الحقوق محفوظة.</p>
+                <div class="developer-credit">
+                    <span>Developed by:</span>
+                    <strong style="color: var(--primary-400); margin: 0 10px;">Mohammad Olleik</strong>
+                    <a href="https://wa.me/96171101381" target="_blank" class="dev-social-btn whatsapp"
+                        title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://instagram.com/molleik7" target="_blank" class="dev-social-btn instagram"
+                        title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div class="toast-container"></div>
+
+    <!-- Main JavaScript -->
+    <script src="app.js"></script>
+</body>
+
+</html>
