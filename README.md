@@ -15,7 +15,7 @@
 [![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
 
-**📍 Lebanon | 💻 1+ Years Experience | 🎯 8+ Projects Completed**
+**📍 Lebanon | 💻 1+ Years Experience | 🎯 9+ Projects Completed**
 
 </div>
 
@@ -267,6 +267,31 @@ Kotlin • Android • MVVM • Room DB • Retrofit • Navigation Component
 
 ---
 
+### 9️⃣ Badel w Bi3 - Local Marketplace Platform
+
+<img src="https://img.shields.io/badge/Status-Completed-success?style=flat-square"/> <img src="https://img.shields.io/badge/Arabic-RTL-blue?style=flat-square"/> <img src="https://img.shields.io/badge/Type-Full%20Stack-purple?style=flat-square"/>
+
+A full-stack local buy & sell marketplace platform (بدّل وبيع) with user authentication, ad management, admin dashboard, SEO optimization, and a Node.js/Express backend connected to MongoDB.
+
+**📁 Folder:** `badel w bi3/`
+
+**✨ Key Features:**
+- 🛒 Buy, sell & trade marketplace
+- 🔐 User authentication with JWT
+- 👨‍💼 Admin dashboard for managing users & ads
+- 🗄️ MongoDB database with Mongoose
+- 🔒 Security: Helmet, rate limiting, input sanitization
+- 🌐 SEO optimized (sitemap, robots.txt, meta tags)
+- 📱 Progressive Web App (PWA) with Service Worker
+- 🇦🇪 Arabic RTL support
+
+**🛠️ Tech Stack:**
+```
+HTML5 • CSS3 • JavaScript • Node.js • Express • MongoDB • JWT Auth
+```
+
+---
+
 ## 🎓 Certifications
 
 ### 📜 Android Developer Course Completion — SamDroid
@@ -290,7 +315,7 @@ Successfully completed the **"Become an Android Developer"** course by **SamDroi
 
 | 🎯 **Experience** | 📦 **Projects** | ⭐ **Satisfaction** |
 |:-----------------:|:---------------:|:------------------:|
-| 1+ Years | 8+ | 100% |
+| 1+ Years | 9+ | 100% |
 
 </div>
 
