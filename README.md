@@ -1,8 +1,8 @@
-# 🚀 Mohammad Olleik - Full Stack Developer Portfolio
+# 🚀 Mohammad Olleik - Junior Full Stack Developer Portfolio
 
 <div align="center">
 
-![Portfolio Banner](https://img.shields.io/badge/Mohammad%20Olleik-Full%20Stack%20Developer-gradient?style=for-the-badge&labelColor=1a1a2e&color=16213e)
+![Portfolio Banner](https://img.shields.io/badge/Mohammad%20Olleik-Junior%20Full%20Stack%20Developer-gradient?style=for-the-badge&labelColor=1a1a2e&color=16213e)
 
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
@@ -23,7 +23,7 @@
 
 ## 👋 About Me
 
-Hi! I'm **Mohammad Olleik**, a passionate **Full Stack Developer** based in Lebanon. I specialize in creating modern, responsive, and user-friendly applications across web, mobile, and desktop — combining powerful performance with beautiful design.
+Hi! I'm **Mohammad Olleik**, a passionate **Junior Full Stack Developer** based in Lebanon. I specialize in creating modern, responsive, and user-friendly applications across web, mobile, and desktop — combining powerful performance with beautiful design.
 
 > *"I believe that a website is the most important interface for any business today."*
 
