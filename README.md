@@ -267,6 +267,23 @@ Kotlin • Android • MVVM • Room DB • Retrofit • Navigation Component
 
 ---
 
+## 🎓 Certifications
+
+### 📜 Android Developer Course Completion — SamDroid
+
+<img src="https://img.shields.io/badge/Status-Certified-success?style=flat-square"/> <img src="https://img.shields.io/badge/Focus-Android%20%7C%20Kotlin-7F52FF?style=flat-square"/>
+
+Successfully completed the **"Become an Android Developer"** course by **SamDroid** (Instructor: Sam Shouman) and passed the final test. This certifies proven skills in Android app development using Kotlin and a strong commitment to learning.
+
+**🏆 Skills Certified:**
+- 📱 Android App Development with Kotlin
+- 🏗️ MVVM Architecture
+- 🗄️ Room Database & Retrofit API
+- 🧭 Navigation Component
+- 🌙 Dark & Light Mode Implementation
+
+---
+
 ## 📈 GitHub Stats
 
 <div align="center">
