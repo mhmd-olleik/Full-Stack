@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/quotesListFragment"
+        android:icon="@drawable/ic_quotes"
+        android:title="Quotes" />
+    <item
+        android:id="@+id/addQuoteFragment"
+        android:icon="@drawable/ic_add"
+        android:title="Add" />
+    <item
+        android:id="@+id/apiQuoteFragment"
+        android:icon="@drawable/ic_api"
+        android:title="Random" />
+    <item
+        android:id="@+id/settingsFragment"
+        android:icon="@drawable/ic_settings"
+        android:title="Settings" />
+</menu>

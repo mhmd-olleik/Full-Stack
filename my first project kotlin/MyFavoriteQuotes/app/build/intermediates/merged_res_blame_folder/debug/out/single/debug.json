@@ -1,0 +1,66 @@
+[
+    {
+        "merged": "com.example.myfavoritequotes.app-merged_res-54:/layout_fragment_api_quote.xml.flat",
+        "source": "com.example.myfavoritequotes.app-main-56:/layout/fragment_api_quote.xml"
+    },
+    {
+        "merged": "com.example.myfavoritequotes.app-merged_res-54:/drawable_ic_api.xml.flat",
+        "source": "com.example.myfavoritequotes.app-main-56:/drawable/ic_api.xml"
+    },
+    {
+        "merged": "com.example.myfavoritequotes.app-merged_res-54:/navigation_nav_graph.xml.flat",
+        "source": "com.example.myfavoritequotes.app-main-56:/navigation/nav_graph.xml"
+    },
+    {
+        "merged": "com.example.myfavoritequotes.app-merged_res-54:/drawable_ic_quotes.xml.flat",
+        "source": "com.example.myfavoritequotes.app-main-56:/drawable/ic_quotes.xml"
+    },
+    {
+        "merged": "com.example.myfavoritequotes.app-merged_res-54:/layout_fragment_quotes_list.xml.flat",
+        "source": "com.example.myfavoritequotes.app-main-56:/layout/fragment_quotes_list.xml"
+    },
+    {
+        "merged": "com.example.myfavoritequotes.app-merged_res-54:/layout_activity_main.xml.flat",
+        "source": "com.example.myfavoritequotes.app-main-56:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.myfavoritequotes.app-merged_res-54:/layout_fragment_add_quote.xml.flat",
+        "source": "com.example.myfavoritequotes.app-main-56:/layout/fragment_add_quote.xml"
+    },
+    {
+        "merged": "com.example.myfavoritequotes.app-merged_res-54:/layout_item_quote.xml.flat",
+        "source": "com.example.myfavoritequotes.app-main-56:/layout/item_quote.xml"
+    },
+    {
+        "merged": "com.example.myfavoritequotes.app-merged_res-54:/menu_bottom_nav_menu.xml.flat",
+        "source": "com.example.myfavoritequotes.app-main-56:/menu/bottom_nav_menu.xml"
+    },
+    {
+        "merged": "com.example.myfavoritequotes.app-merged_res-54:/drawable_ic_add.xml.flat",
+        "source": "com.example.myfavoritequotes.app-main-56:/drawable/ic_add.xml"
+    },
+    {
+        "merged": "com.example.myfavoritequotes.app-merged_res-54:/layout_fragment_settings.xml.flat",
+        "source": "com.example.myfavoritequotes.app-main-56:/layout/fragment_settings.xml"
+    },
+    {
+        "merged": "com.example.myfavoritequotes.app-merged_res-54:/drawable_ic_favorite_border.xml.flat",
+        "source": "com.example.myfavoritequotes.app-main-56:/drawable/ic_favorite_border.xml"
+    },
+    {
+        "merged": "com.example.myfavoritequotes.app-merged_res-54:/drawable_ic_delete.xml.flat",
+        "source": "com.example.myfavoritequotes.app-main-56:/drawable/ic_delete.xml"
+    },
+    {
+        "merged": "com.example.myfavoritequotes.app-merged_res-54:/drawable_ic_favorite_filled.xml.flat",
+        "source": "com.example.myfavoritequotes.app-main-56:/drawable/ic_favorite_filled.xml"
+    },
+    {
+        "merged": "com.example.myfavoritequotes.app-merged_res-54:/drawable_ic_settings.xml.flat",
+        "source": "com.example.myfavoritequotes.app-main-56:/drawable/ic_settings.xml"
+    },
+    {
+        "merged": "com.example.myfavoritequotes.app-merged_res-54:/drawable_ic_refresh.xml.flat",
+        "source": "com.example.myfavoritequotes.app-main-56:/drawable/ic_refresh.xml"
+    }
+]

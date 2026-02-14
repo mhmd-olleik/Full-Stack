@@ -337,4 +337,4 @@ window.addEventListener('scroll', () => {
     }
 });
 
-console.log('Hamza Restaurant website loaded successfully!');
+console.log('Restaurant website loaded successfully!');

@@ -1,0 +1,57 @@
+com.example.myfavoritequotes.app-viewpager2-1.0.0-0 C:\Users\dell\.gradle\caches\9.0.0\transforms\01bc901e8e2e81073186ee3305603085\transformed\viewpager2-1.0.0\res
+com.example.myfavoritequotes.app-room-runtime-2.6.1-1 C:\Users\dell\.gradle\caches\9.0.0\transforms\0907b95ef1ed0326e4c5d637b4eb1b26\transformed\room-runtime-2.6.1\res
+com.example.myfavoritequotes.app-navigation-ui-2.7.6-2 C:\Users\dell\.gradle\caches\9.0.0\transforms\09183ec34aec41eaaddf013f28e67e23\transformed\navigation-ui-2.7.6\res
+com.example.myfavoritequotes.app-window-1.0.0-3 C:\Users\dell\.gradle\caches\9.0.0\transforms\0956fc9333ca1f626064c20e274289a8\transformed\window-1.0.0\res
+com.example.myfavoritequotes.app-navigation-runtime-ktx-2.7.6-4 C:\Users\dell\.gradle\caches\9.0.0\transforms\0ed24f62c1e0b17b38f53d05b8c12a5f\transformed\navigation-runtime-ktx-2.7.6\res
+com.example.myfavoritequotes.app-navigation-fragment-ktx-2.7.6-5 C:\Users\dell\.gradle\caches\9.0.0\transforms\0f10af9bd6ece3cc72018590a9504ae1\transformed\navigation-fragment-ktx-2.7.6\res
+com.example.myfavoritequotes.app-lifecycle-viewmodel-ktx-2.7.0-6 C:\Users\dell\.gradle\caches\9.0.0\transforms\0f5852208b9500a307c593d92f55186a\transformed\lifecycle-viewmodel-ktx-2.7.0\res
+com.example.myfavoritequotes.app-slidingpanelayout-1.2.0-7 C:\Users\dell\.gradle\caches\9.0.0\transforms\0fe5617fc63e6902659c4b5c89039570\transformed\slidingpanelayout-1.2.0\res
+com.example.myfavoritequotes.app-emoji2-1.2.0-8 C:\Users\dell\.gradle\caches\9.0.0\transforms\1cb484e1c992ed2bf425a4700632ed08\transformed\emoji2-1.2.0\res
+com.example.myfavoritequotes.app-activity-ktx-1.8.0-9 C:\Users\dell\.gradle\caches\9.0.0\transforms\1e803ad2c1c0d985a33c92ae28fb3a67\transformed\activity-ktx-1.8.0\res
+com.example.myfavoritequotes.app-emoji2-views-helper-1.2.0-10 C:\Users\dell\.gradle\caches\9.0.0\transforms\21ef713f98d97c6a5a41b98f059d794b\transformed\emoji2-views-helper-1.2.0\res
+com.example.myfavoritequotes.app-material-1.11.0-11 C:\Users\dell\.gradle\caches\9.0.0\transforms\23418ad9332658ff758175634bcf6380\transformed\material-1.11.0\res
+com.example.myfavoritequotes.app-lifecycle-livedata-2.7.0-12 C:\Users\dell\.gradle\caches\9.0.0\transforms\28b07b790784fa7fcb89566b993322e6\transformed\lifecycle-livedata-2.7.0\res
+com.example.myfavoritequotes.app-lifecycle-livedata-core-2.7.0-13 C:\Users\dell\.gradle\caches\9.0.0\transforms\2df162d403248452bb1d26c035008a04\transformed\lifecycle-livedata-core-2.7.0\res
+com.example.myfavoritequotes.app-core-runtime-2.2.0-14 C:\Users\dell\.gradle\caches\9.0.0\transforms\33400164bb4c990b4fd30ada0e0a72b4\transformed\core-runtime-2.2.0\res
+com.example.myfavoritequotes.app-datastore-preferences-1.0.0-15 C:\Users\dell\.gradle\caches\9.0.0\transforms\3e0930f634a5e95f2b9592d83c03f09c\transformed\datastore-preferences-1.0.0\res
+com.example.myfavoritequotes.app-savedstate-ktx-1.2.1-16 C:\Users\dell\.gradle\caches\9.0.0\transforms\3fe442d348e14ab50fa29eddef830ef6\transformed\savedstate-ktx-1.2.1\res
+com.example.myfavoritequotes.app-coordinatorlayout-1.1.0-17 C:\Users\dell\.gradle\caches\9.0.0\transforms\42ca80bb6882eead9d09f083057885a3\transformed\coordinatorlayout-1.1.0\res
+com.example.myfavoritequotes.app-lifecycle-runtime-ktx-2.7.0-18 C:\Users\dell\.gradle\caches\9.0.0\transforms\538d861cdd0131a155c0260bd9e93c7b\transformed\lifecycle-runtime-ktx-2.7.0\res
+com.example.myfavoritequotes.app-navigation-ui-ktx-2.7.6-19 C:\Users\dell\.gradle\caches\9.0.0\transforms\5ac2043a8ce7247e633bd8651f3abbc8\transformed\navigation-ui-ktx-2.7.6\res
+com.example.myfavoritequotes.app-datastore-1.0.0-20 C:\Users\dell\.gradle\caches\9.0.0\transforms\6f826d7ee075e57b3b930bc69fc3c77c\transformed\datastore-1.0.0\res
+com.example.myfavoritequotes.app-fragment-1.6.2-21 C:\Users\dell\.gradle\caches\9.0.0\transforms\72e921d435cc1c5c45f29a40a79cf884\transformed\fragment-1.6.2\res
+com.example.myfavoritequotes.app-profileinstaller-1.3.0-22 C:\Users\dell\.gradle\caches\9.0.0\transforms\7617c8cb1bfc89632ec19dd5640eb590\transformed\profileinstaller-1.3.0\res
+com.example.myfavoritequotes.app-cardview-1.0.0-23 C:\Users\dell\.gradle\caches\9.0.0\transforms\7a117369017af59bb1bb7af6be8333a0\transformed\cardview-1.0.0\res
+com.example.myfavoritequotes.app-lifecycle-livedata-core-ktx-2.7.0-24 C:\Users\dell\.gradle\caches\9.0.0\transforms\7b261c4cdc0afaac4ac10f4fa97374bf\transformed\lifecycle-livedata-core-ktx-2.7.0\res
+com.example.myfavoritequotes.app-core-1.12.0-25 C:\Users\dell\.gradle\caches\9.0.0\transforms\7bdbde4a54f464d2b231d8a39f552ef2\transformed\core-1.12.0\res
+com.example.myfavoritequotes.app-appcompat-1.6.1-26 C:\Users\dell\.gradle\caches\9.0.0\transforms\885742e92ed52240acfdeef70a7cbc42\transformed\appcompat-1.6.1\res
+com.example.myfavoritequotes.app-lifecycle-viewmodel-savedstate-2.7.0-27 C:\Users\dell\.gradle\caches\9.0.0\transforms\8a3529e9c49adbf0ad5670c89690fc1e\transformed\lifecycle-viewmodel-savedstate-2.7.0\res
+com.example.myfavoritequotes.app-startup-runtime-1.1.1-28 C:\Users\dell\.gradle\caches\9.0.0\transforms\8cc9e515d9a1c66c3dea7c627820781f\transformed\startup-runtime-1.1.1\res
+com.example.myfavoritequotes.app-savedstate-1.2.1-29 C:\Users\dell\.gradle\caches\9.0.0\transforms\97fa7fe58e9258664b65eb9eac1a5ca5\transformed\savedstate-1.2.1\res
+com.example.myfavoritequotes.app-lifecycle-runtime-2.7.0-30 C:\Users\dell\.gradle\caches\9.0.0\transforms\a92a08a96fa40b457f4a706a0cc010be\transformed\lifecycle-runtime-2.7.0\res
+com.example.myfavoritequotes.app-recyclerview-1.1.0-31 C:\Users\dell\.gradle\caches\9.0.0\transforms\ab6a3a42b38942c1d403826742301b1f\transformed\recyclerview-1.1.0\res
+com.example.myfavoritequotes.app-core-ktx-1.12.0-32 C:\Users\dell\.gradle\caches\9.0.0\transforms\ae90f640ff7933c8794b1b65f5d4c1df\transformed\core-ktx-1.12.0\res
+com.example.myfavoritequotes.app-navigation-fragment-2.7.6-33 C:\Users\dell\.gradle\caches\9.0.0\transforms\b82925a6a6bc52ae112fb513ccd5995d\transformed\navigation-fragment-2.7.6\res
+com.example.myfavoritequotes.app-lifecycle-viewmodel-2.7.0-34 C:\Users\dell\.gradle\caches\9.0.0\transforms\b8df49f63dbafc126a402743dd83bc72\transformed\lifecycle-viewmodel-2.7.0\res
+com.example.myfavoritequotes.app-annotation-experimental-1.3.0-35 C:\Users\dell\.gradle\caches\9.0.0\transforms\baf06d1b12b63a6f456953dcafc64875\transformed\annotation-experimental-1.3.0\res
+com.example.myfavoritequotes.app-sqlite-framework-2.4.0-36 C:\Users\dell\.gradle\caches\9.0.0\transforms\c47b070c963b64eb357df80a12a0e0dd\transformed\sqlite-framework-2.4.0\res
+com.example.myfavoritequotes.app-navigation-common-ktx-2.7.6-37 C:\Users\dell\.gradle\caches\9.0.0\transforms\cda2fbc3f19c0c2132a35bbb171404b6\transformed\navigation-common-ktx-2.7.6\res
+com.example.myfavoritequotes.app-transition-1.4.1-38 C:\Users\dell\.gradle\caches\9.0.0\transforms\ce6e705359a4317b19fd7ac3116d68ca\transformed\transition-1.4.1\res
+com.example.myfavoritequotes.app-lifecycle-livedata-ktx-2.7.0-39 C:\Users\dell\.gradle\caches\9.0.0\transforms\da62c2c079bc24f22f33c12ce18f8599\transformed\lifecycle-livedata-ktx-2.7.0\res
+com.example.myfavoritequotes.app-drawerlayout-1.1.1-40 C:\Users\dell\.gradle\caches\9.0.0\transforms\da62e80420b09cd102607e611adc409f\transformed\drawerlayout-1.1.1\res
+com.example.myfavoritequotes.app-room-ktx-2.6.1-41 C:\Users\dell\.gradle\caches\9.0.0\transforms\da6f9b7ca5253e7ec399c1d3902356e9\transformed\room-ktx-2.6.1\res
+com.example.myfavoritequotes.app-constraintlayout-2.1.4-42 C:\Users\dell\.gradle\caches\9.0.0\transforms\e68ce72c355be0d1f5c3ce34bd06012d\transformed\constraintlayout-2.1.4\res
+com.example.myfavoritequotes.app-lifecycle-process-2.7.0-43 C:\Users\dell\.gradle\caches\9.0.0\transforms\ea56c847c6bbd9711843e3d5ec0ca8ae\transformed\lifecycle-process-2.7.0\res
+com.example.myfavoritequotes.app-navigation-common-2.7.6-44 C:\Users\dell\.gradle\caches\9.0.0\transforms\ebd18776ea36a3da3e49513b3a289918\transformed\navigation-common-2.7.6\res
+com.example.myfavoritequotes.app-fragment-ktx-1.6.2-45 C:\Users\dell\.gradle\caches\9.0.0\transforms\eeb9969280419af3ddf5fe0918558c7c\transformed\fragment-ktx-1.6.2\res
+com.example.myfavoritequotes.app-sqlite-2.4.0-46 C:\Users\dell\.gradle\caches\9.0.0\transforms\f3839ad68f7a965d99a18b54c00e0993\transformed\sqlite-2.4.0\res
+com.example.myfavoritequotes.app-activity-1.8.0-47 C:\Users\dell\.gradle\caches\9.0.0\transforms\f6af40f893156233a6a4483939457e2e\transformed\activity-1.8.0\res
+com.example.myfavoritequotes.app-navigation-runtime-2.7.6-48 C:\Users\dell\.gradle\caches\9.0.0\transforms\fa1d9d71234f478d2911ae58a55e8d28\transformed\navigation-runtime-2.7.6\res
+com.example.myfavoritequotes.app-appcompat-resources-1.6.1-49 C:\Users\dell\.gradle\caches\9.0.0\transforms\ffed3f3fbed2b9f25a89e31479caa8f3\transformed\appcompat-resources-1.6.1\res
+com.example.myfavoritequotes.app-pngs-50 C:\Users\dell\Desktop\my first project kotlin\MyFavoriteQuotes\app\build\generated\res\pngs\debug
+com.example.myfavoritequotes.app-resValues-51 C:\Users\dell\Desktop\my first project kotlin\MyFavoriteQuotes\app\build\generated\res\resValues\debug
+com.example.myfavoritequotes.app-packageDebugResources-52 C:\Users\dell\Desktop\my first project kotlin\MyFavoriteQuotes\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.example.myfavoritequotes.app-packageDebugResources-53 C:\Users\dell\Desktop\my first project kotlin\MyFavoriteQuotes\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.example.myfavoritequotes.app-debug-54 C:\Users\dell\Desktop\my first project kotlin\MyFavoriteQuotes\app\build\intermediates\merged_res\debug\mergeDebugResources
+com.example.myfavoritequotes.app-debug-55 C:\Users\dell\Desktop\my first project kotlin\MyFavoriteQuotes\app\src\debug\res
+com.example.myfavoritequotes.app-main-56 C:\Users\dell\Desktop\my first project kotlin\MyFavoriteQuotes\app\src\main\res
