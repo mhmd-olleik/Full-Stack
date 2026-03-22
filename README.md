@@ -339,7 +339,6 @@ g++ robot_simulator.cpp -o robot_simulator && ./robot_simulator
 
 [![Email](https://img.shields.io/badge/Email-olkdev313@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:olkdev313@gmail.com)
 [![WhatsApp](https://img.shields.io/badge/WhatsApp-+961%2071%20101%20381-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/96171101381)
-[![Instagram](https://img.shields.io/badge/Instagram-molleik7-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/molleik7)
 [![GitHub](https://img.shields.io/badge/GitHub-mhmd--olleik-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mhmd-olleik)
 
 </div>
