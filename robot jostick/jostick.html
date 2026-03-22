@@ -1,0 +1,1331 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ROS2 Robot Control Panel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/roslib/build/roslib.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/nipplejs@0.10.2/dist/nipplejs.min.js"></script>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 40%, #16213e 100%);
+      color: #e0e0e0;
+      min-height: 100vh;
+      overflow-x: hidden
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 24px;
+      background: rgba(15, 15, 30, .85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, .06);
+      position: sticky;
+      top: 0;
+      z-index: 100
+    }
+
+    .topbar h1 {
+      font-size: 18px;
+      font-weight: 600;
+      background: linear-gradient(135deg, #00d2ff, #7b2ff7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text
+    }
+
+    .status-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      transition: all .3s
+    }
+
+    .status-chip.connected {
+      background: rgba(0, 210, 120, .15);
+      color: #00d278;
+      border: 1px solid rgba(0, 210, 120, .3)
+    }
+
+    .status-chip.disconnected {
+      background: rgba(255, 60, 60, .15);
+      color: #ff5555;
+      border: 1px solid rgba(255, 60, 60, .3)
+    }
+
+    .status-chip.error {
+      background: rgba(255, 165, 0, .15);
+      color: #ffa500;
+      border: 1px solid rgba(255, 165, 0, .3)
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      animation: pulse 2s infinite
+    }
+
+    .connected .status-dot {
+      background: #00d278
+    }
+
+    .disconnected .status-dot {
+      background: #ff5555;
+      animation: none
+    }
+
+    .error .status-dot {
+      background: #ffa500
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        box-shadow: 0 0 0 0 rgba(0, 210, 120, .4)
+      }
+
+      50% {
+        opacity: .7;
+        box-shadow: 0 0 0 8px rgba(0, 210, 120, 0)
+      }
+    }
+
+    .main-grid {
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      gap: 20px;
+      padding: 20px 24px;
+      max-width: 1600px;
+      margin: 0 auto
+    }
+
+    @media(max-width:900px) {
+      .main-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, .04);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, .08);
+      border-radius: 16px;
+      padding: 20px;
+      transition: border-color .3s
+    }
+
+    .glass:hover {
+      border-color: rgba(255, 255, 255, .14)
+    }
+
+    .section-title {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: #888;
+      margin-bottom: 14px
+    }
+
+    .slider-group {
+      margin-bottom: 6px
+    }
+
+    .slider-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: #aaa;
+      margin-bottom: 6px
+    }
+
+    .slider-value {
+      background: rgba(0, 210, 255, .12);
+      color: #00d2ff;
+      padding: 2px 10px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 13px
+    }
+
+    input[type=range] {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: rgba(255, 255, 255, .1);
+      outline: none
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #00d2ff, #7b2ff7);
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0, 210, 255, .4)
+    }
+
+    .preset-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 14px;
+      flex-direction: column
+    }
+
+    .preset-card {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      transition: all .2s
+    }
+
+    .preset-card-slow {
+      background: rgba(0, 180, 255, .06);
+      border: 1px solid rgba(0, 180, 255, .15)
+    }
+
+    .preset-card-slow.active {
+      background: rgba(0, 180, 255, .15);
+      border-color: rgba(0, 180, 255, .4);
+      box-shadow: 0 0 15px rgba(0, 180, 255, .12)
+    }
+
+    .preset-card-turbo {
+      background: rgba(255, 160, 0, .06);
+      border: 1px solid rgba(255, 160, 0, .15)
+    }
+
+    .preset-card-turbo.active {
+      background: rgba(255, 160, 0, .15);
+      border-color: rgba(255, 160, 0, .4);
+      box-shadow: 0 0 15px rgba(255, 160, 0, .12);
+      animation: turbo-glow 1.5s infinite
+    }
+
+    .preset-btn {
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 700;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all .2s;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      white-space: nowrap;
+      flex-shrink: 0
+    }
+
+    .preset-btn:active {
+      transform: scale(.95)
+    }
+
+    .preset-slow {
+      background: rgba(0, 180, 255, .15);
+      color: #00b4ff;
+      border: 1px solid rgba(0, 180, 255, .3)
+    }
+
+    .preset-slow:hover {
+      background: rgba(0, 180, 255, .25)
+    }
+
+    .preset-turbo {
+      background: rgba(255, 160, 0, .15);
+      color: #ffa000;
+      border: 1px solid rgba(255, 160, 0, .3)
+    }
+
+    .preset-turbo:hover {
+      background: rgba(255, 160, 0, .25)
+    }
+
+    .preset-inputs {
+      display: flex;
+      gap: 6px;
+      flex: 1
+    }
+
+    .preset-input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      flex: 1
+    }
+
+    .preset-input-group label {
+      font-size: 10px;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: .5px
+    }
+
+    .preset-input-group input {
+      width: 100%;
+      padding: 5px 8px;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, .1);
+      background: rgba(255, 255, 255, .06);
+      color: #e0e0e0;
+      font-family: 'Inter', sans-serif;
+      outline: none;
+      text-align: center
+    }
+
+    .preset-input-group input:focus {
+      border-color: rgba(0, 210, 255, .4);
+      box-shadow: 0 0 8px rgba(0, 210, 255, .15)
+    }
+
+    .preset-turbo.active {
+      background: rgba(255, 160, 0, .3);
+      box-shadow: 0 0 20px rgba(255, 160, 0, .2);
+      border-color: rgba(255, 160, 0, .5);
+      animation: turbo-glow 1.5s infinite
+    }
+
+    @keyframes turbo-glow {
+
+      0%,
+      100% {
+        box-shadow: 0 0 15px rgba(255, 160, 0, .15)
+      }
+
+      50% {
+        box-shadow: 0 0 25px rgba(255, 160, 0, .35)
+      }
+    }
+
+    .joy-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px
+    }
+
+    .joy-col {
+      text-align: center
+    }
+
+    .joy-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: #ccc;
+      margin-bottom: 4px
+    }
+
+    .joy-sub {
+      font-size: 11px;
+      color: #666;
+      margin-bottom: 8px
+    }
+
+    .joyBox {
+      width: 100%;
+      aspect-ratio: 1;
+      max-width: 170px;
+      margin: 0 auto;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, .1);
+      position: relative;
+      touch-action: none;
+      background: radial-gradient(circle, rgba(255, 255, 255, .03) 0%, transparent 70%)
+    }
+
+    .joy-readout {
+      margin-top: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      font-family: 'Courier New', monospace;
+      color: #00d2ff
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap
+    }
+
+    .ctrl-btn {
+      flex: 1;
+      min-width: 100px;
+      padding: 12px 16px;
+      font-size: 14px;
+      font-weight: 600;
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all .2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: 'Inter', sans-serif
+    }
+
+    .ctrl-btn:active {
+      transform: scale(.96)
+    }
+
+    .btn-start {
+      background: rgba(0, 210, 120, .12);
+      color: #00d278;
+      border-color: rgba(0, 210, 120, .25)
+    }
+
+    .btn-start:hover {
+      background: rgba(0, 210, 120, .2)
+    }
+
+    .btn-start.active {
+      background: rgba(0, 210, 120, .25);
+      box-shadow: 0 0 20px rgba(0, 210, 120, .15)
+    }
+
+    .btn-stop {
+      background: rgba(255, 60, 60, .12);
+      color: #ff5555;
+      border-color: rgba(255, 60, 60, .25)
+    }
+
+    .btn-stop:hover {
+      background: rgba(255, 60, 60, .2)
+    }
+
+    .cam-wrapper {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #000;
+      aspect-ratio: 16/10
+    }
+
+    .cam-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block
+    }
+
+    .cam-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px;
+      background: linear-gradient(transparent, rgba(0, 0, 0, .75))
+    }
+
+    .cam-btn {
+      padding: 10px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      border: 1px solid rgba(255, 255, 255, .2);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all .2s;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 6px
+    }
+
+    .cam-btn:active {
+      transform: scale(.95)
+    }
+
+    .cam-btn.screenshot {
+      background: rgba(255, 255, 255, .12);
+      color: #fff
+    }
+
+    .cam-btn.screenshot:hover {
+      background: rgba(255, 255, 255, .22)
+    }
+
+    .cam-btn.record {
+      background: rgba(255, 60, 60, .15);
+      color: #ff6b6b
+    }
+
+    .cam-btn.record:hover {
+      background: rgba(255, 60, 60, .25)
+    }
+
+    .cam-btn.record.recording {
+      background: rgba(255, 60, 60, .35);
+      color: #fff;
+      animation: rec-pulse 1s infinite
+    }
+
+    @keyframes rec-pulse {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(255, 60, 60, .3)
+      }
+
+      50% {
+        box-shadow: 0 0 0 8px rgba(255, 60, 60, 0)
+      }
+    }
+
+    .cam-btn.fullscreen-btn {
+      background: rgba(255, 255, 255, .08);
+      color: #ccc
+    }
+
+    .cam-btn.fullscreen-btn:hover {
+      background: rgba(255, 255, 255, .18)
+    }
+
+    .rec-timer {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      display: none;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 40, 40, .8);
+      color: #fff;
+      padding: 4px 14px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600
+    }
+
+    .rec-timer.active {
+      display: flex
+    }
+
+    .rec-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #fff;
+      animation: blink 1s infinite
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: .2
+      }
+    }
+
+    .cam-info {
+      font-size: 12px;
+      color: #555;
+      margin-top: 8px;
+      word-break: break-all
+    }
+
+    .cam-info code {
+      background: rgba(255, 255, 255, .05);
+      padding: 2px 8px;
+      border-radius: 6px;
+      color: #888;
+      font-size: 11px
+    }
+
+    .gallery-section {
+      padding: 0 24px 24px;
+      max-width: 1600px;
+      margin: 0 auto
+    }
+
+    .gallery-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px
+    }
+
+    .gallery-header h3 {
+      font-size: 14px;
+      font-weight: 600;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 1px
+    }
+
+    .gallery-clear {
+      font-size: 12px;
+      color: #ff5555;
+      cursor: pointer;
+      background: rgba(255, 60, 60, .1);
+      border: 1px solid rgba(255, 60, 60, .2);
+      padding: 4px 14px;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif
+    }
+
+    .gallery-clear:hover {
+      background: rgba(255, 60, 60, .2)
+    }
+
+    .gallery-strip {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255, 255, 255, .1) transparent
+    }
+
+    .gallery-item {
+      flex-shrink: 0;
+      width: 160px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, .04);
+      border: 1px solid rgba(255, 255, 255, .08);
+      cursor: pointer;
+      transition: all .2s;
+      position: relative
+    }
+
+    .gallery-item:hover {
+      border-color: rgba(0, 210, 255, .3);
+      transform: translateY(-2px)
+    }
+
+    .gallery-item img,
+    .gallery-item video {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+      display: block
+    }
+
+    .gallery-meta {
+      padding: 8px 10px;
+      font-size: 11px;
+      color: #888;
+      display: flex;
+      justify-content: space-between;
+      align-items: center
+    }
+
+    .gallery-badge {
+      font-size: 10px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 6px;
+      text-transform: uppercase
+    }
+
+    .badge-photo {
+      background: rgba(0, 210, 255, .15);
+      color: #00d2ff
+    }
+
+    .badge-video {
+      background: rgba(255, 60, 60, .15);
+      color: #ff6b6b
+    }
+
+    .gallery-empty {
+      text-align: center;
+      padding: 30px;
+      color: #555;
+      font-size: 13px;
+      border: 1px dashed rgba(255, 255, 255, .08);
+      border-radius: 12px;
+      width: 100%
+    }
+
+    .gallery-download {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: rgba(0, 0, 0, .6);
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      opacity: 0;
+      transition: opacity .2s
+    }
+
+    .gallery-item:hover .gallery-download {
+      opacity: 1
+    }
+
+    .kbd-hint {
+      margin-top: 10px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, .03);
+      border: 1px solid rgba(255, 255, 255, .06);
+      font-size: 12px;
+      color: #666;
+      line-height: 1.6
+    }
+
+    kbd {
+      display: inline-block;
+      padding: 2px 7px;
+      font-size: 11px;
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .15);
+      border-radius: 5px;
+      font-family: 'Inter', sans-serif;
+      color: #aaa
+    }
+
+    .sep {
+      border: none;
+      border-top: 1px solid rgba(255, 255, 255, .06);
+      margin: 14px 0
+    }
+
+    .controls-disabled .joyBox {
+      opacity: .3;
+      pointer-events: none
+    }
+
+    .controls-disabled .joy-readout {
+      color: #555
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <h1>&#x1F916; Robot Control Panel</h1>
+    <div id="rosChip" class="status-chip disconnected">
+      <div class="status-dot"></div>
+      <span id="rosStatus">DISCONNECTED</span>
+    </div>
+  </div>
+
+  <div class="main-grid">
+    <div>
+      <div class="glass" style="margin-bottom:16px">
+        <div class="section-title">&#x26A1; Speed Settings</div>
+        <div class="slider-group">
+          <div class="slider-label">
+            <span>Max Linear (m/s)</span>
+            <span class="slider-value" id="linVal">0.6</span>
+          </div>
+          <input id="linMax" type="range" min="0" max="5.0" step="0.05" value="0.6" />
+        </div>
+        <div class="slider-group" style="margin-top:12px">
+          <div class="slider-label">
+            <span>Max Angular (rad/s)</span>
+            <span class="slider-value" id="angVal">1.5</span>
+          </div>
+          <input id="angMax" type="range" min="0" max="5.0" step="0.1" value="1.5" />
+        </div>
+        <div class="preset-row">
+          <div class="preset-card preset-card-slow" id="slowCard">
+            <button id="btnSlow" class="preset-btn preset-slow">&#x1F422; SLOW</button>
+            <div class="preset-inputs">
+              <div class="preset-input-group">
+                <label>Lin</label>
+                <input id="slowLin" type="number" min="0" step="0.1" value="0.3" />
+              </div>
+              <div class="preset-input-group">
+                <label>Ang</label>
+                <input id="slowAng" type="number" min="0" step="0.1" value="0.5" />
+              </div>
+            </div>
+          </div>
+          <div class="preset-card preset-card-turbo" id="turboCard">
+            <button id="btnTurbo" class="preset-btn preset-turbo">&#x26A1; TURBO</button>
+            <div class="preset-inputs">
+              <div class="preset-input-group">
+                <label>Lin</label>
+                <input id="turboLin" type="number" min="0" step="0.1" value="5.0" />
+              </div>
+              <div class="preset-input-group">
+                <label>Ang</label>
+                <input id="turboAng" type="number" min="0" step="0.1" value="5.0" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass" id="joyPanel" style="margin-bottom:16px">
+        <div class="section-title">&#x1F579;&#xFE0F; Joysticks</div>
+        <div class="joy-grid">
+          <div class="joy-col">
+            <div class="joy-label">Left Stick</div>
+            <div class="joy-sub">Forward / Back</div>
+            <div id="joyL" class="joyBox"></div>
+            <div class="joy-readout">Lin: <span id="linOut">0.00</span></div>
+          </div>
+          <div class="joy-col">
+            <div class="joy-label">Right Stick</div>
+            <div class="joy-sub">Turn L / R</div>
+            <div id="joyR" class="joyBox"></div>
+            <div class="joy-readout">Ang: <span id="angOut">0.00</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass" style="margin-bottom:16px">
+        <div class="section-title">&#x1F3AE; Controls</div>
+        <div class="btn-row" style="margin-bottom:10px">
+          <button id="btnStart" class="ctrl-btn btn-start">&#x25B6; START</button>
+          <button id="btnStop" class="ctrl-btn btn-stop">&#x1F6D1; E-STOP</button>
+        </div>
+        <hr class="sep" />
+        <div class="kbd-hint">
+          <strong style="color:#aaa">&#x2328;&#xFE0F; Keyboard:</strong><br />
+          <kbd>W</kbd> Forward &nbsp; <kbd>S</kbd> Backward &nbsp;
+          <kbd>A</kbd> Turn Left &nbsp; <kbd>D</kbd> Turn Right &nbsp;
+          <kbd>Space</kbd> Stop
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="glass">
+        <div class="section-title">&#x1F4F9; Camera Feed</div>
+        <div class="cam-wrapper" id="camWrapper">
+          <img id="cam" src="" alt="Camera Stream" crossorigin="anonymous" />
+          <div class="rec-timer" id="recTimer">
+            <div class="rec-dot"></div>
+            <span id="recTime">00:00</span> REC
+          </div>
+          <div class="cam-overlay">
+            <button class="cam-btn screenshot" id="btnScreenshot">&#x1F4F8; Screenshot</button>
+            <button class="cam-btn record" id="recBtn">&#x1F534; Record</button>
+            <button class="cam-btn fullscreen-btn" id="btnFullscreen">&#x26F6; Fullscreen</button>
+          </div>
+        </div>
+        <div class="cam-info" style="margin-top:10px">
+          Stream: <code id="camUrlTxt"></code>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-section">
+    <div class="gallery-header">
+      <h3>&#x1F4C1; Gallery (<span id="galleryCount">0</span>)</h3>
+      <button class="gallery-clear" id="btnClearGallery">&#x1F5D1; Clear All</button>
+    </div>
+    <div id="galleryStrip" class="gallery-strip">
+      <div class="gallery-empty">No screenshots or recordings yet.</div>
+    </div>
+  </div>
+
+  <script>
+    /* ======== CONFIG (DO NOT CHANGE) ======== */
+    var JETSON_IP = "192.168.0.45";
+    var ROSBRIDGE_URL = "ws://" + JETSON_IP + ":9090";
+    var CAMERA_STREAM_URL = "http://" + JETSON_IP + ":8080/stream?topic=/camera/camera/color/image_raw";
+    var SNAPSHOT_URL = "http://" + JETSON_IP + ":8080/snapshot?topic=/camera/camera/color/image_raw";
+
+    /* ======== ROS Setup ======== */
+    var rosChip = document.getElementById("rosChip");
+    var rosStatusEl = document.getElementById("rosStatus");
+    var ros = new ROSLIB.Ros({ url: ROSBRIDGE_URL });
+
+    ros.on("connection", function () {
+      rosStatusEl.textContent = "CONNECTED";
+      rosChip.className = "status-chip connected";
+    });
+    ros.on("error", function () {
+      rosStatusEl.textContent = "ERROR";
+      rosChip.className = "status-chip error";
+    });
+    ros.on("close", function () {
+      rosStatusEl.textContent = "DISCONNECTED";
+      rosChip.className = "status-chip disconnected";
+    });
+
+    var cmdVel = new ROSLIB.Topic({
+      ros: ros,
+      name: "/cmd_vel",
+      messageType: "geometry_msgs/Twist"
+    });
+
+    function publishCmd(lin, ang) {
+      cmdVel.publish(new ROSLIB.Message({
+        linear: { x: lin, y: 0, z: 0 },
+        angular: { x: 0, y: 0, z: ang }
+      }));
+    }
+
+    /* ======== Camera Setup ======== */
+    document.getElementById("cam").src = CAMERA_STREAM_URL;
+    document.getElementById("camUrlTxt").textContent = CAMERA_STREAM_URL;
+
+    /* ======== UI Sliders ======== */
+    var linMaxEl = document.getElementById("linMax");
+    var angMaxEl = document.getElementById("angMax");
+    var linValEl = document.getElementById("linVal");
+    var angValEl = document.getElementById("angVal");
+
+    /* ======== SPEED PRESETS (TURBO / SLOW) ======== */
+    var activePreset = "";
+
+    var btnSlow = document.getElementById("btnSlow");
+    var btnTurbo = document.getElementById("btnTurbo");
+    var slowCard = document.getElementById("slowCard");
+    var turboCard = document.getElementById("turboCard");
+    var slowLinInput = document.getElementById("slowLin");
+    var slowAngInput = document.getElementById("slowAng");
+    var turboLinInput = document.getElementById("turboLin");
+    var turboAngInput = document.getElementById("turboAng");
+
+    function highlightPreset() {
+      var lin = parseFloat(linMaxEl.value);
+      var ang = parseFloat(angMaxEl.value);
+      var sLin = parseFloat(slowLinInput.value) || 0.3;
+      var sAng = parseFloat(slowAngInput.value) || 0.5;
+      var tLin = parseFloat(turboLinInput.value) || 5.0;
+      var tAng = parseFloat(turboAngInput.value) || 5.0;
+
+      if (Math.abs(lin - sLin) < 0.05 && Math.abs(ang - sAng) < 0.15) {
+        activePreset = "slow";
+      } else if (Math.abs(lin - tLin) < 0.05 && Math.abs(ang - tAng) < 0.15) {
+        activePreset = "turbo";
+      } else {
+        activePreset = "";
+      }
+
+      if (activePreset === "slow") {
+        slowCard.classList.add("active");
+      } else {
+        slowCard.classList.remove("active");
+      }
+      if (activePreset === "turbo") {
+        turboCard.classList.add("active");
+      } else {
+        turboCard.classList.remove("active");
+      }
+    }
+
+    function adjustSliderRange(linVal, angVal) {
+      if (linVal > parseFloat(linMaxEl.max)) {
+        linMaxEl.max = linVal;
+        linMaxEl.step = linVal > 10 ? 1 : 0.05;
+      }
+      if (angVal > parseFloat(angMaxEl.max)) {
+        angMaxEl.max = angVal;
+        angMaxEl.step = angVal > 10 ? 1 : 0.1;
+      }
+    }
+
+    function resetSliderRange() {
+      linMaxEl.max = 5.0;
+      linMaxEl.step = 0.05;
+      angMaxEl.max = 5.0;
+      angMaxEl.step = 0.1;
+    }
+
+    function updateSliders() {
+      linValEl.textContent = parseFloat(linMaxEl.value).toFixed(2);
+      angValEl.textContent = parseFloat(angMaxEl.value).toFixed(1);
+      highlightPreset();
+    }
+    linMaxEl.addEventListener("input", updateSliders);
+    angMaxEl.addEventListener("input", updateSliders);
+    updateSliders();
+
+    btnSlow.addEventListener("click", function () {
+      var sLin = parseFloat(slowLinInput.value) || 0.3;
+      var sAng = parseFloat(slowAngInput.value) || 0.5;
+      if (activePreset === "slow") {
+        activePreset = "";
+        resetSliderRange();
+        linMaxEl.value = 0.6;
+        angMaxEl.value = 1.5;
+      } else {
+        activePreset = "slow";
+        adjustSliderRange(sLin, sAng);
+        linMaxEl.value = sLin;
+        angMaxEl.value = sAng;
+      }
+      updateSliders();
+    });
+
+    btnTurbo.addEventListener("click", function () {
+      var tLin = parseFloat(turboLinInput.value) || 5.0;
+      var tAng = parseFloat(turboAngInput.value) || 5.0;
+      if (activePreset === "turbo") {
+        activePreset = "";
+        resetSliderRange();
+        linMaxEl.value = 0.6;
+        angMaxEl.value = 1.5;
+      } else {
+        activePreset = "turbo";
+        adjustSliderRange(tLin, tAng);
+        linMaxEl.value = tLin;
+        angMaxEl.value = tAng;
+      }
+      updateSliders();
+    });
+
+    /* ======== Drive State ======== */
+    var linCmd = 0;
+    var angCmd = 0;
+    var driveEnabled = false;
+
+    var linOut = document.getElementById("linOut");
+    var angOut = document.getElementById("angOut");
+    var btnStart = document.getElementById("btnStart");
+    var joyPanel = document.getElementById("joyPanel");
+
+    btnStart.addEventListener("click", function () {
+      driveEnabled = !driveEnabled;
+      if (driveEnabled) {
+        btnStart.innerHTML = "&#x23F8; RUNNING";
+        btnStart.classList.add("active");
+        joyPanel.classList.remove("controls-disabled");
+      } else {
+        btnStart.innerHTML = "&#x25B6; START";
+        btnStart.classList.remove("active");
+        joyPanel.classList.add("controls-disabled");
+        linCmd = 0; angCmd = 0;
+        publishCmd(0, 0);
+        linOut.textContent = "0.00";
+        angOut.textContent = "0.00";
+      }
+    });
+
+    document.getElementById("btnStop").addEventListener("click", function () {
+      driveEnabled = false;
+      linCmd = 0; angCmd = 0;
+      publishCmd(0, 0);
+      btnStart.innerHTML = "&#x25B6; START";
+      btnStart.classList.remove("active");
+      joyPanel.classList.add("controls-disabled");
+      linOut.textContent = "0.00";
+      angOut.textContent = "0.00";
+      var btn = document.getElementById("btnStop");
+      btn.style.boxShadow = "0 0 30px rgba(255,40,40,0.5)";
+      setTimeout(function () { btn.style.boxShadow = ""; }, 500);
+    });
+
+    joyPanel.classList.add("controls-disabled");
+
+    /* ======== Joysticks ======== */
+    var joyL = nipplejs.create({
+      zone: document.getElementById("joyL"),
+      mode: "static",
+      position: { left: "50%", top: "50%" },
+      color: "#00d2ff",
+      size: 130
+    });
+
+    joyL.on("move", function (evt, data) {
+      if (!driveEnabled) return;
+      var maxLin = parseFloat(linMaxEl.value);
+      var y = data.vector ? data.vector.y : 0;
+      linCmd = maxLin * (-y);
+      linOut.textContent = linCmd.toFixed(2);
+    });
+    joyL.on("end", function () { linCmd = 0; linOut.textContent = "0.00"; });
+
+    var joyR = nipplejs.create({
+      zone: document.getElementById("joyR"),
+      mode: "static",
+      position: { left: "50%", top: "50%" },
+      color: "#7b2ff7",
+      size: 130
+    });
+
+    joyR.on("move", function (evt, data) {
+      if (!driveEnabled) return;
+      var maxAng = parseFloat(angMaxEl.value);
+      var x = data.vector ? data.vector.x : 0;
+      angCmd = maxAng * x;
+      angOut.textContent = angCmd.toFixed(2);
+    });
+    joyR.on("end", function () { angCmd = 0; angOut.textContent = "0.00"; });
+
+    /* ======== Keyboard (WASD) ======== */
+    var keysDown = {};
+
+    document.addEventListener("keydown", function (e) {
+      if (e.repeat) return;
+      var k = e.key.toLowerCase();
+      if (k === "w" || k === "a" || k === "s" || k === "d" || k === " ") {
+        e.preventDefault();
+        keysDown[k] = true;
+        if (k === " ") {
+          document.getElementById("btnStop").click();
+          return;
+        }
+        if (!driveEnabled) btnStart.click();
+        updateKbd();
+      }
+    });
+
+    document.addEventListener("keyup", function (e) {
+      delete keysDown[e.key.toLowerCase()];
+      updateKbd();
+    });
+
+    function updateKbd() {
+      if (!driveEnabled) return;
+      var maxLin = parseFloat(linMaxEl.value);
+      var maxAng = parseFloat(angMaxEl.value);
+      var lin = 0, ang = 0;
+      if (keysDown["w"]) lin += maxLin;
+      if (keysDown["s"]) lin -= maxLin;
+      if (keysDown["a"]) ang += maxAng;
+      if (keysDown["d"]) ang -= maxAng;
+      linCmd = lin;
+      angCmd = ang;
+      linOut.textContent = linCmd.toFixed(2);
+      angOut.textContent = angCmd.toFixed(2);
+    }
+
+    /* ======== Publish Loop (20 Hz) ======== */
+    setInterval(function () {
+      if (!driveEnabled) return;
+      publishCmd(linCmd, angCmd);
+    }, 50);
+
+    /* ======== Screenshot ======== */
+    document.getElementById("btnScreenshot").addEventListener("click", function () {
+      var ts = getTimestamp();
+      var snapUrl = SNAPSHOT_URL + "&t=" + Date.now();
+
+      /* Try fetching the snapshot image directly */
+      fetch(snapUrl)
+        .then(function (res) {
+          if (!res.ok) throw new Error("HTTP " + res.status);
+          return res.blob();
+        })
+        .then(function (blob) {
+          var url = URL.createObjectURL(blob);
+          downloadBlob(blob, "screenshot_" + ts + ".jpg");
+          addToGallery(url, "photo", ts);
+        })
+        .catch(function () {
+          /* Fallback: try canvas capture */
+          try {
+            var img = document.getElementById("cam");
+            var canvas = document.createElement("canvas");
+            canvas.width = img.naturalWidth || 640;
+            canvas.height = img.naturalHeight || 480;
+            var ctx = canvas.getContext("2d");
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+            canvas.toBlob(function (blob) {
+              if (!blob) { window.open(snapUrl, "_blank"); return; }
+              var url = URL.createObjectURL(blob);
+              downloadBlob(blob, "screenshot_" + ts + ".jpg");
+              addToGallery(url, "photo", ts);
+            }, "image/jpeg", 0.92);
+          } catch (e2) {
+            /* Last resort: open snapshot in new tab */
+            window.open(snapUrl, "_blank");
+            addToGallery(snapUrl, "photo", ts);
+          }
+        });
+    });
+
+    /* ======== Video Recording ======== */
+    var isRecording = false;
+    var mediaRecorder = null;
+    var recordedChunks = [];
+    var recStartTime = 0;
+    var recTimerInterval = null;
+    var recDrawInterval = null;
+
+    document.getElementById("recBtn").addEventListener("click", function () {
+      if (isRecording) {
+        /* STOP recording */
+        if (mediaRecorder && mediaRecorder.state !== "inactive") mediaRecorder.stop();
+        isRecording = false;
+        clearInterval(recTimerInterval);
+        document.getElementById("recBtn").classList.remove("recording");
+        document.getElementById("recBtn").innerHTML = "&#x1F534; Record";
+        document.getElementById("recTimer").classList.remove("active");
+        document.getElementById("recTime").textContent = "00:00";
+      } else {
+        /* START recording */
+        var img = document.getElementById("cam");
+        var canvas = document.createElement("canvas");
+        canvas.width = img.naturalWidth || 640;
+        canvas.height = img.naturalHeight || 480;
+        var ctx = canvas.getContext("2d");
+
+        recDrawInterval = setInterval(function () {
+          try { ctx.drawImage(img, 0, 0, canvas.width, canvas.height); } catch (e) { }
+        }, 50);
+
+        var stream;
+        try {
+          stream = canvas.captureStream(20);
+          mediaRecorder = new MediaRecorder(stream, { mimeType: "video/webm;codecs=vp9" });
+        } catch (e) {
+          try {
+            stream = canvas.captureStream(20);
+            mediaRecorder = new MediaRecorder(stream, { mimeType: "video/webm" });
+          } catch (e2) {
+            alert("Recording not supported");
+            clearInterval(recDrawInterval);
+            return;
+          }
+        }
+
+        recordedChunks = [];
+        mediaRecorder.ondataavailable = function (e) {
+          if (e.data && e.data.size > 0) recordedChunks.push(e.data);
+        };
+        mediaRecorder.onstop = function () {
+          clearInterval(recDrawInterval);
+          var blob = new Blob(recordedChunks, { type: "video/webm" });
+          var url = URL.createObjectURL(blob);
+          var ts = getTimestamp();
+          downloadBlob(blob, "recording_" + ts + ".webm");
+          addToGallery(url, "video", ts);
+        };
+
+        mediaRecorder.start(1000);
+        isRecording = true;
+        recStartTime = Date.now();
+
+        document.getElementById("recBtn").classList.add("recording");
+        document.getElementById("recBtn").innerHTML = "&#x23F9; Stop";
+        document.getElementById("recTimer").classList.add("active");
+
+        recTimerInterval = setInterval(function () {
+          var elapsed = Math.floor((Date.now() - recStartTime) / 1000);
+          var mm = String(Math.floor(elapsed / 60)).padStart(2, "0");
+          var ss = String(elapsed % 60).padStart(2, "0");
+          document.getElementById("recTime").textContent = mm + ":" + ss;
+        }, 500);
+      }
+    });
+
+    /* ======== Fullscreen ======== */
+    document.getElementById("btnFullscreen").addEventListener("click", function () {
+      var el = document.getElementById("camWrapper");
+      if (!document.fullscreenElement) {
+        el.requestFullscreen().catch(function () { });
+      } else {
+        document.exitFullscreen();
+      }
+    });
+
+    /* ======== Gallery ======== */
+    var galleryItems = [];
+
+    function addToGallery(url, type, timestamp) {
+      galleryItems.unshift({ url: url, type: type, timestamp: timestamp });
+      renderGallery();
+    }
+
+    function renderGallery() {
+      var strip = document.getElementById("galleryStrip");
+      document.getElementById("galleryCount").textContent = galleryItems.length;
+      if (galleryItems.length === 0) {
+        strip.innerHTML = '<div class="gallery-empty">No screenshots or recordings yet.</div>';
+        return;
+      }
+      strip.innerHTML = "";
+      for (var i = 0; i < galleryItems.length; i++) {
+        var item = galleryItems[i];
+        var div = document.createElement("div");
+        div.className = "gallery-item";
+        if (item.type === "photo") {
+          div.innerHTML = '<img src="' + item.url + '" alt="Screenshot"/>' +
+            '<button class="gallery-download" onclick="event.stopPropagation();downloadFromGallery(' + i + ')">&#x2B07;</button>' +
+            '<div class="gallery-meta"><span>' + item.timestamp + '</span><span class="gallery-badge badge-photo">Photo</span></div>';
+        } else {
+          div.innerHTML = '<video src="' + item.url + '" muted></video>' +
+            '<button class="gallery-download" onclick="event.stopPropagation();downloadFromGallery(' + i + ')">&#x2B07;</button>' +
+            '<div class="gallery-meta"><span>' + item.timestamp + '</span><span class="gallery-badge badge-video">Video</span></div>';
+        }
+        (function (u) { div.addEventListener("click", function () { window.open(u, "_blank"); }); })(item.url);
+        strip.appendChild(div);
+      }
+    }
+
+    function downloadFromGallery(idx) {
+      var item = galleryItems[idx];
+      if (!item) return;
+      var a = document.createElement("a");
+      a.href = item.url;
+      a.download = item.type === "photo" ? "screenshot_" + item.timestamp + ".jpg" : "recording_" + item.timestamp + ".webm";
+      a.click();
+    }
+
+    document.getElementById("btnClearGallery").addEventListener("click", function () {
+      if (galleryItems.length === 0) return;
+      if (!confirm("Clear all gallery items?")) return;
+      for (var i = 0; i < galleryItems.length; i++) {
+        try { URL.revokeObjectURL(galleryItems[i].url); } catch (e) { }
+      }
+      galleryItems = [];
+      renderGallery();
+    });
+
+    /* ======== Utilities ======== */
+    function getTimestamp() {
+      var d = new Date();
+      return d.getFullYear() +
+        String(d.getMonth() + 1).padStart(2, "0") +
+        String(d.getDate()).padStart(2, "0") + "_" +
+        String(d.getHours()).padStart(2, "0") +
+        String(d.getMinutes()).padStart(2, "0") +
+        String(d.getSeconds()).padStart(2, "0");
+    }
+
+    function downloadBlob(blob, filename) {
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+  </script>
+</body>
+
+</html>

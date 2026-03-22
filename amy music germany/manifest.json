@@ -1,0 +1,26 @@
+{
+  "name": "Amy Eventsängerin – Musikerin: Gitarre + Gesang",
+  "short_name": "Amy",
+  "description": "Professionelle Live-Musik für Hochzeit, Firmenfeier, Party und mehr. Gitarre & Gesang mit Gefühl, Ausstrahlung und Leidenschaft.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#0a1628",
+  "background_color": "#0a1628",
+  "categories": ["music", "entertainment"],
+  "lang": "de",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

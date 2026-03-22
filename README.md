@@ -1,390 +1,355 @@
-# 🚀 Mohammad Olleik - Junior Full Stack Developer Portfolio
-
 <div align="center">
 
-![Portfolio Banner](https://img.shields.io/badge/Mohammad%20Olleik-Junior%20Full%20Stack%20Developer-gradient?style=for-the-badge&labelColor=1a1a2e&color=16213e)
+# Mohammad Olleik
 
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
-[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)](https://kotlinlang.org/)
-[![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
-[![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
-[![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+### Full Stack Developer · Software Engineer
 
-**📍 Lebanon | 💻 1+ Years Experience | 🎯 9+ Projects Completed**
+[![Portfolio](https://img.shields.io/badge/Portfolio-14%20Projects-0A66C2?style=for-the-badge)](https://github.com/mhmd-olleik/Full-Stack)
+[![Location](https://img.shields.io/badge/📍-Lebanon-green?style=for-the-badge)]()
+[![Email](https://img.shields.io/badge/Email-olkdev313@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:olkdev313@gmail.com)
 
 </div>
 
 ---
 
-## 👋 About Me
+## 🎯 About
 
-Hi! I'm **Mohammad Olleik**, a passionate **Junior Full Stack Developer** based in Lebanon. I specialize in creating modern, responsive, and user-friendly applications across web, mobile, and desktop — combining powerful performance with beautiful design.
+Full Stack Developer with **1+ years of hands-on experience** building **14 real-world projects** spanning web applications, mobile apps, desktop software, computer vision, and robotics. Proficient in a wide range of technologies from frontend to backend, with a strong focus on modern design, clean architecture, and user experience.
 
-> *"I believe that a website is the most important interface for any business today."*
-
-### 🛠️ Skills & Technologies
-
-<table>
-<tr>
-<td align="center" width="96">
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" width="48" height="48" alt="HTML5"/>
-<br><strong>HTML5</strong>
-</td>
-<td align="center" width="96">
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" width="48" height="48" alt="CSS3"/>
-<br><strong>CSS3</strong>
-</td>
-<td align="center" width="96">
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" width="48" height="48" alt="JavaScript"/>
-<br><strong>JavaScript</strong>
-</td>
-<td align="center" width="96">
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" width="48" height="48" alt="TypeScript"/>
-<br><strong>TypeScript</strong>
-</td>
-<td align="center" width="96">
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" width="48" height="48" alt="Python"/>
-<br><strong>Python</strong>
-</td>
-</tr>
-<tr>
-<td align="center" width="96">
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/kotlin/kotlin-original.svg" width="48" height="48" alt="Kotlin"/>
-<br><strong>Kotlin</strong>
-</td>
-<td align="center" width="96">
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" width="48" height="48" alt="Node.js"/>
-<br><strong>Node.js</strong>
-</td>
-<td align="center" width="96">
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg" width="48" height="48" alt="Next.js"/>
-<br><strong>Next.js</strong>
-</td>
-<td align="center" width="96">
-<img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" width="48" height="48" alt="Tailwind"/>
-<br><strong>Tailwind</strong>
-</td>
-<td align="center" width="96">
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" width="48" height="48" alt="Git"/>
-<br><strong>Git</strong>
-</td>
-</tr>
-</table>
+Currently seeking a **Master's program in Computer Science / Software Engineering** to deepen my expertise and contribute to innovative research.
 
 ---
 
-## 📂 Projects
+## 🛠️ Technical Skills
 
-### 1️⃣ LebanonEdu - Educational Platform
-
-<img src="https://img.shields.io/badge/Status-Completed-success?style=flat-square"/> <img src="https://img.shields.io/badge/Bilingual-EN%20%7C%20FR-green?style=flat-square"/>
-
-A comprehensive educational platform for Lebanese students with license-based access and a tutoring assistant.
-
-**📁 Folder:** `lebanonedu/`
-
-**✨ Key Features:**
-- 🔐 License key authentication system
-- 🌍 Multi-language support (English & French)
-- 🤖 Study Assistant chatbot
-- 📚 Course catalog with grades 9-12 curriculum
-- ⏱️ Built-in study timer
-- 📊 User progress tracking & achievements
-- 🎓 Lebanese Baccalaureate exam preparation
-- 📱 Fully responsive with mobile menu
-
-**🛠️ Tech Stack:**
-```
-HTML5 • TailwindCSS • JavaScript • Vanilla CSS Animations
-```
+| Domain | Technologies |
+|--------|-------------|
+| **Frontend** | HTML5, CSS3, JavaScript (ES6+), TypeScript, React, Next.js, TailwindCSS |
+| **Backend** | Node.js, Express.js, REST APIs, JWT Authentication |
+| **Mobile** | Kotlin, Android (MVVM, Room DB, Retrofit, Navigation Component) |
+| **Database** | MongoDB, Mongoose, Room Database |
+| **Desktop & Systems** | C++ (OOP), Python |
+| **AI & Computer Vision** | MediaPipe, OpenCV, NumPy, Hand Gesture Recognition |
+| **Robotics** | ROS2, roslib.js, Real-time Robot Control |
+| **3D Graphics** | OpenGL, Custom 3D Rendering Engines |
+| **DevOps & Tools** | Git, GitHub, Vercel, Netlify, PWA, Service Workers |
+| **Design** | Responsive Design, Glassmorphism, SEO Optimization, UI/UX |
+| **Languages** | Arabic (Native), English (Professional), French (Basic) |
 
 ---
 
-### 2️⃣ Yohmor Live - Community Platform
+## 📂 Project Portfolio
 
-<img src="https://img.shields.io/badge/Status-Completed-success?style=flat-square"/> <img src="https://img.shields.io/badge/Arabic-RTL-blue?style=flat-square"/>
-
-An official electronic platform for Yohmor Al-Shaqif municipality in South Lebanon — a complete local business directory.
-
-**📁 Folder:** `yohmor live/`
-
-**✨ Key Features:**
-- 🏢 Business directory with categories (Institutions, Restaurants, Services, Associations)
-- 🔍 Real-time search functionality
-- 🔔 Notifications & alerts system
-- 📊 Dynamic statistics display
-- 💬 WhatsApp integration for direct contact
-- 📱 Mobile-responsive with hamburger menu
-- 🎨 Modern green-themed design
-- 👨‍💼 Admin panel for content management
-
-**🛠️ Tech Stack:**
-```
-HTML5 • CSS3 • JavaScript • Font Awesome • JSON Data
-```
+> **14 completed projects** demonstrating expertise in full-stack development, AI, robotics, and mobile development.
 
 ---
 
-### 3️⃣ Hamza Restaurant - Fine Dining Website
+### 🌐 Web Applications
 
-<img src="https://img.shields.io/badge/Status-Completed-success?style=flat-square"/> <img src="https://img.shields.io/badge/Type-Restaurant-orange?style=flat-square"/>
+<details>
+<summary><strong>1. LebanonEdu — Educational Platform</strong> &nbsp; <img src="https://img.shields.io/badge/Bilingual-EN%20|%20FR-green?style=flat-square"/></summary>
 
-A stunning restaurant website featuring elegant design, interactive menu filtering, photo gallery, and online reservation system.
+**Description:** A comprehensive educational platform for Lebanese students (Grades 9–12) featuring license-based access, a study assistant chatbot, progress tracking, and Lebanese Baccalaureate exam preparation.
 
-**📁 Folder:** `restaurant/`
+**Technical Highlights:**
+- License key authentication system
+- Multi-language support (English & French)
+- AI-powered study assistant chatbot
+- Progress tracking and achievement system
 
-**✨ Key Features:**
-- 🍽️ Interactive menu with category filtering (Appetizers, Mains, Desserts, Beverages)
-- 📸 Beautiful photo gallery with hover effects
-- 📅 Online reservation form with date/time picker
-- 🎨 Elegant design with Playfair Display typography
-- 📱 Fully responsive with hamburger mobile menu
-- ✨ Smooth scroll animations and transitions
-- 📍 Contact section with business hours & location
-- 🔗 Social media integration
+**Tech:** `HTML5` `TailwindCSS` `JavaScript` `CSS Animations`
+**Folder:** `lebanonedu/`
+</details>
 
-**🛠️ Tech Stack:**
-```
-HTML5 • CSS3 • JavaScript • Google Fonts • Font Awesome
-```
+<details>
+<summary><strong>2. Yohmor Live — Municipal Community Platform</strong> &nbsp; <img src="https://img.shields.io/badge/Arabic-RTL-blue?style=flat-square"/></summary>
 
----
+**Description:** An official digital platform for Yohmor Al-Shaqif municipality (South Lebanon) — a complete local business directory with real-time search, notifications, WhatsApp integration, and an admin panel.
 
-### 4️⃣ HK Collection - E-Commerce Store
+**Technical Highlights:**
+- Real-time search and filtering engine
+- Admin panel for content management
+- WhatsApp API integration for direct contact
+- Arabic RTL layout with responsive design
 
-<img src="https://img.shields.io/badge/Status-Completed-success?style=flat-square"/> <img src="https://img.shields.io/badge/Type-Full%20Stack-purple?style=flat-square"/>
+**Tech:** `HTML5` `CSS3` `JavaScript` `Font Awesome` `JSON Data`
+**Folder:** `yohmor live/`
+</details>
 
-A full-stack e-commerce platform with product catalog, admin dashboard, and backend API for managing products and data.
+<details>
+<summary><strong>3. Hamza Restaurant — Fine Dining Website</strong></summary>
 
-**📁 Folder:** `hk collection/`
+**Description:** A visually stunning restaurant website with interactive menu filtering, photo gallery with hover effects, online reservation system, and smooth scroll animations.
 
-**✨ Key Features:**
-- 🛒 Product catalog with categories and filtering
-- 👨‍💼 Admin panel for managing products
-- 🔧 RESTful API backend with Node.js & Express
-- 🗄️ MongoDB database integration
-- 📱 Fully responsive design
-- 🎨 Modern UI with custom styling
+**Technical Highlights:**
+- Dynamic menu filtering by category
+- Online reservation form with date/time validation
+- Smooth scroll animations and transitions
 
-**🛠️ Tech Stack:**
-```
-HTML5 • CSS3 • JavaScript • Node.js • Express • MongoDB
-```
+**Tech:** `HTML5` `CSS3` `JavaScript` `Google Fonts`
+**Folder:** `restaurant/`
+</details>
 
----
+<details>
+<summary><strong>4. Amy Eventsängerin — Artist Portfolio (Germany)</strong> &nbsp; <img src="https://img.shields.io/badge/PWA-blue?style=flat-square"/> <img src="https://img.shields.io/badge/German-yellow?style=flat-square"/></summary>
 
-### 5️⃣ OLK Films - Movie Platform
+**Description:** A professional portfolio website for a German event singer, built as a Progressive Web App. Features glassmorphism design, floating particle animations, a photo gallery with lightbox, and booking integration via Email & Instagram.
 
-<img src="https://img.shields.io/badge/Status-Completed-success?style=flat-square"/> <img src="https://img.shields.io/badge/Type-Full%20Stack-purple?style=flat-square"/>
+**Technical Highlights:**
+- Progressive Web App (PWA) with Service Worker & offline support
+- SEO optimized (Open Graph, sitemap, structured data)
+- Glassmorphism UI with CSS particle animations
+- Deployed on Netlify & Vercel
 
-A modern movie streaming platform built with Next.js and TypeScript, featuring authentication, user profiles, and MongoDB backend.
-
-**📁 Folder:** `newfilms/`
-
-**✨ Key Features:**
-- 🎬 Movie catalog with search and filtering
-- 🔐 User authentication with JWT
-- 👤 User profiles and roles
-- 🗄️ MongoDB database for data persistence
-- 📱 Responsive design with TailwindCSS
-- ⚡ Server-side rendering with Next.js
-
-**🛠️ Tech Stack:**
-```
-Next.js • TypeScript • TailwindCSS • MongoDB • JWT Auth
-```
+**Tech:** `HTML5` `CSS3` `JavaScript` `PWA` `Netlify` `Vercel`
+**Folder:** `amy music germany/`
+</details>
 
 ---
 
-### 6️⃣ 3D Object Viewer
+### ⚙️ Full-Stack Applications
 
-<img src="https://img.shields.io/badge/Status-Completed-success?style=flat-square"/> <img src="https://img.shields.io/badge/Type-Desktop%20App-blue?style=flat-square"/>
+<details>
+<summary><strong>5. HK Collection — E-Commerce Platform</strong> &nbsp; <img src="https://img.shields.io/badge/Full%20Stack-purple?style=flat-square"/></summary>
 
-A Python-based desktop application for viewing and interacting with 3D objects using gesture controls.
+**Description:** A full-stack e-commerce platform with product catalog, category filtering, admin dashboard for product management, and a RESTful API backend.
 
-**📁 Folder:** `3D object viewer/`
+**Technical Highlights:**
+- RESTful API design with Express.js
+- MongoDB database integration with Mongoose ODM
+- Admin CRUD operations for products
+- Responsive frontend with dynamic data rendering
 
-**✨ Key Features:**
-- 🖐️ Gesture-based 3D object manipulation
-- 🔄 Rotate, zoom, and pan controls
-- 🎨 Real-time 3D rendering
-- 🖥️ Desktop GUI application
+**Tech:** `HTML5` `CSS3` `JavaScript` `Node.js` `Express` `MongoDB`
+**Folder:** `hk collection/`
+</details>
 
-**🛠️ Tech Stack:**
-```
-Python • OpenGL • Gesture Recognition
-```
+<details>
+<summary><strong>6. OLK Films — Movie Streaming Platform</strong> &nbsp; <img src="https://img.shields.io/badge/Full%20Stack-purple?style=flat-square"/></summary>
+
+**Description:** A modern movie streaming platform built with Next.js and TypeScript, featuring JWT authentication, user roles, server-side rendering, and a MongoDB backend.
+
+**Technical Highlights:**
+- Server-side rendering (SSR) with Next.js
+- JWT-based authentication and role management
+- TypeScript for type safety
+- MongoDB for data persistence
+
+**Tech:** `Next.js` `TypeScript` `TailwindCSS` `MongoDB` `JWT` `React`
+**Folder:** `watching/`
+</details>
+
+<details>
+<summary><strong>7. Badel w Bi3 — Local Marketplace Platform</strong> &nbsp; <img src="https://img.shields.io/badge/Full%20Stack-purple?style=flat-square"/> <img src="https://img.shields.io/badge/Arabic-RTL-blue?style=flat-square"/></summary>
+
+**Description:** A full-stack buy & sell marketplace (بدّل وبيع) with user authentication, ad management, admin dashboard, and comprehensive security — built as a PWA with SEO optimization.
+
+**Technical Highlights:**
+- JWT authentication with secure token handling
+- Security: Helmet.js, rate limiting, input sanitization
+- PWA with Service Worker for offline capabilities
+- SEO: dynamic sitemap, robots.txt, Open Graph meta tags
+- Admin dashboard with user & ad management
+
+**Tech:** `HTML5` `CSS3` `JavaScript` `Node.js` `Express` `MongoDB` `JWT`
+**Folder:** `badel w bi3/`
+</details>
+
+<details>
+<summary><strong>8. LIU Chat Bot — AI University Assistant</strong> &nbsp; <img src="https://img.shields.io/badge/Full%20Stack-purple?style=flat-square"/> <img src="https://img.shields.io/badge/Bilingual-EN%20|%20AR-green?style=flat-square"/></summary>
+
+**Description:** An AI-powered chatbot for Lebanese International University (LIU) students. Features a custom AI engine with a comprehensive knowledge base, user authentication, admin panel, and bilingual support (English & Arabic).
+
+**Technical Highlights:**
+- Custom AI/NLP engine for natural language understanding
+- Comprehensive knowledge base (Admission, GPA, Courses, Campuses, Financial Aid)
+- User authentication (Login & Register) with session management
+- Admin panel for content management
+- Bilingual RTL/LTR support
+
+**Tech:** `HTML5` `CSS3` `JavaScript` `Node.js` `Express` `AI Engine` `JWT`
+**Folder:** `LIU Chat Bot/`
+</details>
 
 ---
 
-### 7️⃣ 3D Home Renderer
+### 📱 Mobile Development
 
-<img src="https://img.shields.io/badge/Status-Completed-success?style=flat-square"/> <img src="https://img.shields.io/badge/Type-Desktop%20App-blue?style=flat-square"/>
+<details>
+<summary><strong>9. My Favorite Quotes — Android App (Kotlin)</strong> &nbsp; <img src="https://img.shields.io/badge/Android-green?style=flat-square"/></summary>
 
-A Python-powered 3D home visualization and rendering application with modular architecture.
+**Description:** A native Android application using MVVM architecture, Room database for local storage, Retrofit for API integration, and Navigation Component — with dark/light mode support.
 
-**📁 Folder:** `3d home python/`
+**Technical Highlights:**
+- MVVM architecture pattern
+- Room Database for offline-first local storage
+- Retrofit HTTP client for REST API consumption
+- Navigation Component for single-activity architecture
+- Dark & Light mode theme switching
 
-**✨ Key Features:**
-- 🏠 3D home model rendering
-- 🎨 Custom rendering engine
-- 📐 Modular architecture (models, renderer, utils)
-- 🖥️ Desktop application
-
-**🛠️ Tech Stack:**
-```
-Python • 3D Rendering • Custom Engine
-```
-
----
-
-### 8️⃣ My Favorite Quotes - Android App
-
-<img src="https://img.shields.io/badge/Status-Completed-success?style=flat-square"/> <img src="https://img.shields.io/badge/Type-Android-green?style=flat-square"/>
-
-A native Android application built with Kotlin using MVVM architecture, featuring Room database, Retrofit API integration, and dark/light mode support.
-
-**📁 Folder:** `my first project kotlin/`
-
-**✨ Key Features:**
-- 📱 Native Android application
-- 🏗️ MVVM architecture pattern
-- 🗄️ Room Database for local storage
-- 🌐 Retrofit for API integration
-- 🧭 Navigation Component for UI flow
-- 🌙 Dark & Light mode support
-- 📤 Quote export functionality
-
-**🛠️ Tech Stack:**
-```
-Kotlin • Android • MVVM • Room DB • Retrofit • Navigation Component
-```
+**Tech:** `Kotlin` `Android SDK` `MVVM` `Room DB` `Retrofit` `Navigation Component`
+**Folder:** `my first project kotlin/`
+</details>
 
 ---
 
-### 9️⃣ Badel w Bi3 - Local Marketplace Platform
+### 🤖 Robotics & Systems
 
-<img src="https://img.shields.io/badge/Status-Completed-success?style=flat-square"/> <img src="https://img.shields.io/badge/Arabic-RTL-blue?style=flat-square"/> <img src="https://img.shields.io/badge/Type-Full%20Stack-purple?style=flat-square"/>
+<details>
+<summary><strong>10. Grid Robot Simulator — C++ Console Application</strong> &nbsp; <img src="https://img.shields.io/badge/C++-00599C?style=flat-square"/></summary>
 
-A full-stack local buy & sell marketplace platform (بدّل وبيع) with user authentication, ad management, admin dashboard, SEO optimization, and a Node.js/Express backend connected to MongoDB.
+**Description:** A feature-rich C++ console application simulating a robot navigating a 2D grid. Includes WASD controls, obstacle placement, collision detection, trail tracking, and auto-patrol — with cross-platform support (Windows & Linux).
 
-**📁 Folder:** `badel w bi3/`
+**Technical Highlights:**
+- Object-Oriented Design (Grid, Robot, CellType classes)
+- ANSI/VT100 terminal rendering with Unicode box drawing
+- Collision detection and boundary checking algorithms
+- Cross-platform: Windows API & Linux builds
 
-**✨ Key Features:**
-- 🛒 Buy, sell & trade marketplace
-- 🔐 User authentication with JWT
-- 👨‍💼 Admin dashboard for managing users & ads
-- 🗄️ MongoDB database with Mongoose
-- 🔒 Security: Helmet, rate limiting, input sanitization
-- 🌐 SEO optimized (sitemap, robots.txt, meta tags)
-- 📱 Progressive Web App (PWA) with Service Worker
-- 🇦🇪 Arabic RTL support
+**Tech:** `C++` `OOP` `ANSI Terminal` `Windows API`
+**Folder:** `c++ robot/`
+</details>
 
-**🛠️ Tech Stack:**
-```
-HTML5 • CSS3 • JavaScript • Node.js • Express • MongoDB • JWT Auth
-```
+<details>
+<summary><strong>11. ROS2 Robot Joystick Control Panel</strong> &nbsp; <img src="https://img.shields.io/badge/ROS2-22314E?style=flat-square"/> <img src="https://img.shields.io/badge/Robotics-orange?style=flat-square"/></summary>
+
+**Description:** A web-based ROS2 robot control interface with dual virtual joysticks, configurable speed presets, live camera feed, screenshot/recording capabilities, and keyboard shortcuts.
+
+**Technical Highlights:**
+- Real-time ROS2 communication via WebSocket (roslib.js)
+- Dual virtual joystick controls (nipple.js) for linear & angular velocity
+- Live camera stream with screenshot and video recording
+- Media gallery for captured content
+
+**Tech:** `HTML5` `CSS3` `JavaScript` `ROS2` `roslib.js` `nipple.js`
+**Folder:** `robot jostick/`
+</details>
+
+---
+
+### 🧠 AI & Computer Vision
+
+<details>
+<summary><strong>12. Air Writing & Eraser — Hand Gesture Recognition</strong> &nbsp; <img src="https://img.shields.io/badge/Computer%20Vision-blue?style=flat-square"/> <img src="https://img.shields.io/badge/AI-red?style=flat-square"/></summary>
+
+**Description:** A high-performance air writing and eraser system using webcam-based hand gesture recognition. Draw in mid-air with your index finger and erase with an open palm — optimized with threaded camera capture for maximum FPS.
+
+**Technical Highlights:**
+- MediaPipe Hand Landmarker for real-time hand tracking (21 landmarks)
+- Async, non-blocking detection pipeline (LIVE_STREAM mode)
+- Multi-threaded camera capture for decoupled I/O and processing
+- Gesture classification (index-only for drawing, open palm for erasing)
+- Weighted smoothing algorithm for stable drawing
+
+**Tech:** `Python` `OpenCV` `MediaPipe` `NumPy` `Threading`
+**Folder:** `writing and earaser python/`
+</details>
+
+---
+
+### 🏗️ 3D Graphics & Visualization
+
+<details>
+<summary><strong>13. 3D Object Viewer — Gesture-Controlled Viewer</strong> &nbsp; <img src="https://img.shields.io/badge/Desktop%20App-blue?style=flat-square"/></summary>
+
+**Description:** A Python-based desktop application for viewing and interacting with 3D objects using gesture controls, with real-time rendering.
+
+**Technical Highlights:**
+- Gesture-based 3D object manipulation (rotate, zoom, pan)
+- Real-time 3D rendering pipeline
+
+**Tech:** `Python` `OpenGL` `Gesture Recognition`
+**Folder:** `3D object viewer python/`
+</details>
+
+<details>
+<summary><strong>14. 3D Home Renderer — Modular Visualization Engine</strong> &nbsp; <img src="https://img.shields.io/badge/Desktop%20App-blue?style=flat-square"/></summary>
+
+**Description:** A Python-powered 3D home model visualization and rendering application with a modular architecture (models, renderer, utils).
+
+**Technical Highlights:**
+- Custom 3D rendering engine
+- Modular architecture for extensibility
+
+**Tech:** `Python` `3D Rendering` `Custom Engine`
+**Folder:** `3d home python/`
+</details>
 
 ---
 
 ## 🎓 Certifications
 
-### 📜 Android Developer Course Completion — SamDroid
-
-<img src="https://img.shields.io/badge/Status-Certified-success?style=flat-square"/> <img src="https://img.shields.io/badge/Focus-Android%20%7C%20Kotlin-7F52FF?style=flat-square"/>
-
-Successfully completed the **"Become an Android Developer"** course by **SamDroid** (Instructor: Sam Shouman) and passed the final test. This certifies proven skills in Android app development using Kotlin and a strong commitment to learning.
-
-**🏆 Skills Certified:**
-- 📱 Android App Development with Kotlin
-- 🏗️ MVVM Architecture
-- 🗄️ Room Database & Retrofit API
-- 🧭 Navigation Component
-- 🌙 Dark & Light Mode Implementation
+| Certificate | Issuer | Focus |
+|-------------|--------|-------|
+| **Become an Android Developer** | SamDroid (Sam Shouman) | Kotlin, MVVM, Room DB, Retrofit, Navigation Component, Dark/Light Mode |
 
 ---
 
-## 📈 GitHub Stats
+## 📊 Technical Summary
 
 <div align="center">
 
-| 🎯 **Experience** | 📦 **Projects** | ⭐ **Satisfaction** |
-|:-----------------:|:---------------:|:------------------:|
-| 1+ Years | 9+ | 100% |
+| Metric | Value |
+|--------|-------|
+| **Total Projects** | 14 |
+| **Web Applications** | 8 (4 Frontend + 4 Full-Stack) |
+| **Mobile Apps** | 1 (Android/Kotlin) |
+| **Robotics Projects** | 2 (C++ Simulator + ROS2 Control Panel) |
+| **AI / Computer Vision** | 1 (Hand Gesture Recognition) |
+| **3D Graphics** | 2 (Object Viewer + Home Renderer) |
+| **Languages Used** | 6 (JavaScript, TypeScript, Python, Kotlin, C++, HTML/CSS) |
+| **Frameworks** | Next.js, Express.js, React, TailwindCSS, Android SDK |
+| **Databases** | MongoDB, Room DB |
 
 </div>
 
 ---
 
-## 📫 Let's Connect!
+## 🚀 Getting Started
+
+```bash
+# Clone the repository
+git clone https://github.com/mhmd-olleik/Full-Stack.git
+cd Full-Stack
+
+# Web projects — open index.html in browser
+cd "lebanonedu"     # or any web project folder
+
+# Next.js project
+cd "watching" && npm install && npm run dev
+
+# Node.js backend projects
+cd "LIU Chat Bot" && npm install && node server.js
+
+# Python projects
+cd "writing and earaser python"
+pip install opencv-python mediapipe numpy
+python air_writing.py
+
+# C++ project
+cd "c++ robot"
+g++ robot_simulator.cpp -o robot_simulator && ./robot_simulator
+```
+
+---
+
+## 📫 Contact
 
 <div align="center">
 
-[![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/96171101381)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:olkdev313@gmail.com)
-[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/molleik7)
+[![Email](https://img.shields.io/badge/Email-olkdev313@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:olkdev313@gmail.com)
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-+961%2071%20101%20381-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/96171101381)
+[![Instagram](https://img.shields.io/badge/Instagram-molleik7-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/molleik7)
+[![GitHub](https://img.shields.io/badge/GitHub-mhmd--olleik-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mhmd-olleik)
 
 </div>
 
 ---
 
-## 🚀 Quick Start
-
-Clone this repository:
-```bash
-git clone https://github.com/mhmd-olleik/frontend-developer.git
-```
-
-Navigate to any project folder and open `index.html` in your browser:
-```bash
-cd "lebanonedu"
-# or
-cd "yohmor live"
-# or
-cd "restaurant"
-# or
-cd "hk collection"
-```
-
-For the Next.js project:
-```bash
-cd "newfilms"
-npm install
-npm run dev
-```
-
-For the Python projects:
-```bash
-cd "3d home python"
-pip install -r requirements.txt
-python main.py
-```
-
----
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
-
 <div align="center">
 
-### 💼 Open for Freelance Projects!
+**📄 Open for opportunities — Freelance, Internships & Master's Programs**
 
-*Need a modern website or app? Let's work together!*
-
-**📧 olkdev313@gmail.com | 📱 +961 71 101 381**
-
----
-
-⭐ **If you like my work, please give this repo a star!** ⭐
-
-Made with ❤️ by **Mohammad Olleik** | Lebanon 🇱🇧
+Made with ❤️ by **Mohammad Olleik** · Lebanon 🇱🇧
 
 </div>

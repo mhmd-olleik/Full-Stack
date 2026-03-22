@@ -1,0 +1,24 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node (if any build tools added later)
+node_modules/
+.npm/
+package-lock.json
+
+# Netlify
+.netlify/
+
+# Vercel
+.vercel/
+
+# Logs
+*.log

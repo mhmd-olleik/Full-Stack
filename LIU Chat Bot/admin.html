@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIU Bot — Admin Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0f;
+            --bg2: #12121a;
+            --bg3: #1a1a2e;
+            --bg4: #1e1e32;
+            --txt: #f0f0f5;
+            --txt2: #9ca3af;
+            --txt3: #6b7280;
+            --blue: #3b82f6;
+            --purple: #8b5cf6;
+            --green: #22c55e;
+            --gold: #f59e0b;
+            --red: #ef4444;
+            --border: rgba(255, 255, 255, 0.06);
+            --radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--txt);
+            min-height: 100vh;
+        }
+
+        a {
+            color: var(--blue);
+            text-decoration: none;
+        }
+
+        /* Login Screen */
+        .login-screen {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .login-box {
+            background: var(--bg2);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 40px;
+            width: 380px;
+            text-align: center;
+        }
+
+        .login-box h2 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .login-box p {
+            color: var(--txt3);
+            font-size: 0.85rem;
+            margin-bottom: 24px;
+        }
+
+        .login-box input {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--bg3);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--txt);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+            outline: none;
+            font-family: inherit;
+        }
+
+        .login-box input:focus {
+            border-color: var(--blue);
+        }
+
+        .login-box button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .login-box .err {
+            color: var(--red);
+            font-size: 0.82rem;
+            margin-top: 8px;
+            display: none;
+        }
+
+        /* Dashboard */
+        .dashboard {
+            display: none;
+        }
+
+        .topbar {
+            background: var(--bg2);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .topbar h1 {
+            font-size: 1.2rem;
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .topbar .user-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .topbar .user-info span {
+            color: var(--txt2);
+            font-size: 0.85rem;
+        }
+
+        .logout-btn {
+            padding: 6px 14px;
+            background: var(--bg3);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--txt2);
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-family: inherit;
+        }
+
+        .logout-btn:hover {
+            border-color: var(--red);
+            color: var(--red);
+        }
+
+        .tabs {
+            display: flex;
+            gap: 4px;
+            padding: 16px 24px 0;
+            background: var(--bg2);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .tab {
+            padding: 10px 20px;
+            background: none;
+            border: none;
+            color: var(--txt3);
+            font-size: 0.85rem;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            font-family: inherit;
+            font-weight: 500;
+        }
+
+        .tab.active {
+            color: var(--blue);
+            border-bottom-color: var(--blue);
+        }
+
+        .tab:hover {
+            color: var(--txt);
+        }
+
+        .content {
+            padding: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Stats Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .stat-card {
+            background: var(--bg2);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px;
+        }
+
+        .stat-card .label {
+            font-size: 0.75rem;
+            color: var(--txt3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .stat-card .value {
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        .stat-card .value.blue {
+            color: var(--blue);
+        }
+
+        .stat-card .value.green {
+            color: var(--green);
+        }
+
+        .stat-card .value.gold {
+            color: var(--gold);
+        }
+
+        .stat-card .value.purple {
+            color: var(--purple);
+        }
+
+        /* Tables */
+        .panel {
+            background: var(--bg2);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .panel-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .panel table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+
+        .panel th {
+            background: var(--bg3);
+            padding: 10px 16px;
+            text-align: left;
+            color: var(--txt2);
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .panel td {
+            padding: 10px 16px;
+            border-top: 1px solid var(--border);
+            color: var(--txt2);
+        }
+
+        .panel tr:hover td {
+            background: var(--bg3);
+        }
+
+        .badge {
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.72rem;
+            font-weight: 600;
+        }
+
+        .badge.high {
+            background: rgba(34, 197, 94, 0.15);
+            color: var(--green);
+        }
+
+        .badge.med {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--gold);
+        }
+
+        .badge.low {
+            background: rgba(239, 68, 68, 0.15);
+            color: var(--red);
+        }
+
+        /* KB Form */
+        .kb-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            padding: 20px;
+        }
+
+        .kb-form input,
+        .kb-form textarea {
+            width: 100%;
+            padding: 10px 14px;
+            background: var(--bg3);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--txt);
+            font-size: 0.85rem;
+            outline: none;
+            font-family: inherit;
+        }
+
+        .kb-form textarea {
+            grid-column: span 2;
+            min-height: 80px;
+            resize: vertical;
+        }
+
+        .kb-form button {
+            grid-column: span 2;
+            padding: 10px;
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- LOGIN -->
+    <div class="login-screen" id="loginScreen">
+        <div class="login-box">
+            <h2>🎓 LIU Admin</h2>
+            <p>Dashboard — Admin Access Only</p>
+            <input id="loginEmail" type="email" placeholder="Email" value="admin@liu.edu.lb">
+            <input id="loginPass" type="password" placeholder="Password" value="admin123">
+            <button onclick="doLogin()">Login</button>
+            <div class="err" id="loginErr"></div>
+        </div>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div class="dashboard" id="dashboard">
+        <div class="topbar">
+            <h1>🎓 LIU Bot — Admin Dashboard</h1>
+            <div class="user-info">
+                <span id="adminName"></span>
+                <button class="logout-btn" onclick="doLogout()">Logout</button>
+            </div>
+        </div>
+        <div class="tabs">
+            <button class="tab active" data-tab="analytics">📊 Analytics</button>
+            <button class="tab" data-tab="questions">❓ Questions Log</button>
+            <button class="tab" data-tab="knowledge">📚 Knowledge Base</button>
+            <button class="tab" data-tab="users">👥 Users</button>
+        </div>
+        <div class="content">
+
+            <!-- ANALYTICS TAB -->
+            <div class="tab-content active" id="tab-analytics">
+                <div class="stats-grid" id="statsGrid"></div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+                    <div class="panel">
+                        <div class="panel-header">🔥 Top Intents</div>
+                        <table id="topIntentsTable">
+                            <thead>
+                                <tr>
+                                    <th>Intent</th>
+                                    <th>Count</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-header">❓ Top Questions</div>
+                        <table id="topQuestionsTable">
+                            <thead>
+                                <tr>
+                                    <th>Question</th>
+                                    <th>Count</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="panel-header">⚠️ Low Confidence Questions (Need Improvement)</div>
+                    <table id="lowConfTable">
+                        <thead>
+                            <tr>
+                                <th>Question</th>
+                                <th>Intent</th>
+                                <th>Confidence</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- QUESTIONS TAB -->
+            <div class="tab-content" id="tab-questions">
+                <div class="panel">
+                    <div class="panel-header">📝 All Logged Questions</div>
+                    <table id="allQuestionsTable">
+                        <thead>
+                            <tr>
+                                <th>Question</th>
+                                <th>Intent</th>
+                                <th>Confidence</th>
+                                <th>Language</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- KNOWLEDGE TAB -->
+            <div class="tab-content" id="tab-knowledge">
+                <div class="panel">
+                    <div class="panel-header">➕ Add New Entry</div>
+                    <div class="kb-form">
+                        <input id="kbTitle" placeholder="Title (EN)">
+                        <input id="kbTitleAr" placeholder="Title (AR)">
+                        <input id="kbCategory" placeholder="Category">
+                        <input id="kbSource" placeholder="Source">
+                        <textarea id="kbContent" placeholder="Content (EN)"></textarea>
+                        <textarea id="kbContentAr" placeholder="Content (AR)"></textarea>
+                        <button onclick="addKBEntry()">➕ Add Entry</button>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="panel-header">📚 Existing Entries</div>
+                    <table id="kbTable">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Category</th>
+                                <th>Updated</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- USERS TAB -->
+            <div class="tab-content" id="tab-users">
+                <div class="panel">
+                    <div class="panel-header">👥 Registered Users</div>
+                    <table id="usersTable">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Joined</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const API = window.location.origin + '/api';
+        let TOKEN = localStorage.getItem('liu_admin_token') || '';
+
+        // Auto-login if token exists
+        if (TOKEN) checkAuth();
+
+        // Tabs
+        document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => {
+            document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(x => x.classList.remove('active'));
+            t.classList.add('active');
+            document.getElementById('tab-' + t.dataset.tab).classList.add('active');
+        }));
+
+        async function doLogin() {
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPass').value;
+            try {
+                const r = await fetch(API + '/auth/login', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email, password }) });
+                const d = await r.json();
+                if (!r.ok) { document.getElementById('loginErr').style.display = 'block'; document.getElementById('loginErr').textContent = d.error; return; }
+                if (d.user.role !== 'admin') { document.getElementById('loginErr').style.display = 'block'; document.getElementById('loginErr').textContent = 'Admin access only.'; return; }
+                TOKEN = d.token;
+                localStorage.setItem('liu_admin_token', TOKEN);
+                showDashboard(d.user);
+            } catch (e) { document.getElementById('loginErr').style.display = 'block'; document.getElementById('loginErr').textContent = 'Connection failed. Is the server running?'; }
+        }
+
+        async function checkAuth() {
+            try {
+                const r = await fetch(API + '/auth/me', { headers: { 'Authorization': 'Bearer ' + TOKEN } });
+                if (r.ok) { const d = await r.json(); if (d.user.role === 'admin') showDashboard(d.user); else doLogout(); }
+                else doLogout();
+            } catch (e) { /* server not running */ }
+        }
+
+        function showDashboard(user) {
+            document.getElementById('loginScreen').style.display = 'none';
+            document.getElementById('dashboard').style.display = 'block';
+            document.getElementById('adminName').textContent = user.full_name;
+            loadAnalytics();
+            loadQuestions();
+            loadKB();
+            loadUsers();
+        }
+
+        function doLogout() { TOKEN = ''; localStorage.removeItem('liu_admin_token'); location.reload(); }
+        function hdr() { return { 'Authorization': 'Bearer ' + TOKEN, 'Content-Type': 'application/json' }; }
+
+        async function loadAnalytics() {
+            const r = await fetch(API + '/admin/analytics', { headers: hdr() });
+            const d = await r.json();
+            document.getElementById('statsGrid').innerHTML = `
+    <div class="stat-card"><div class="label">Total Questions</div><div class="value blue">${d.overview.totalQuestions}</div></div>
+    <div class="stat-card"><div class="label">Total Users</div><div class="value green">${d.overview.totalUsers}</div></div>
+    <div class="stat-card"><div class="label">Avg Confidence</div><div class="value gold">${d.overview.avgConfidence}%</div></div>
+    <div class="stat-card"><div class="label">Knowledge Entries</div><div class="value purple">${d.topIntents.length}</div></div>`;
+            document.querySelector('#topIntentsTable tbody').innerHTML = d.topIntents.map(i => `<tr><td>${i.detected_intent || 'unknown'}</td><td><strong>${i.count}</strong></td></tr>`).join('') || '<tr><td colspan=2 style="text-align:center;color:var(--txt3)">No data yet</td></tr>';
+            document.querySelector('#topQuestionsTable tbody').innerHTML = d.topQuestions.map(q => `<tr><td>${q.question.substring(0, 60)}</td><td><strong>${q.count}</strong></td></tr>`).join('') || '<tr><td colspan=2 style="text-align:center;color:var(--txt3)">No data yet</td></tr>';
+            document.querySelector('#lowConfTable tbody').innerHTML = d.lowConfidence.map(q => `<tr><td>${q.question.substring(0, 50)}</td><td>${q.detected_intent}</td><td><span class="badge low">${Math.round(q.confidence_score)}%</span></td><td>${new Date(q.created_at).toLocaleDateString()}</td></tr>`).join('') || '<tr><td colspan=4 style="text-align:center;color:var(--txt3)">No low confidence questions 🎉</td></tr>';
+        }
+
+        async function loadQuestions() {
+            const r = await fetch(API + '/admin/questions', { headers: hdr() });
+            const d = await r.json();
+            document.querySelector('#allQuestionsTable tbody').innerHTML = d.questions.map(q => {
+                const cls = q.confidence_score >= 90 ? 'high' : q.confidence_score >= 70 ? 'med' : 'low';
+                return `<tr><td>${q.question.substring(0, 60)}</td><td>${q.detected_intent || '-'}</td><td><span class="badge ${cls}">${Math.round(q.confidence_score)}%</span></td><td>${q.language}</td><td>${new Date(q.created_at).toLocaleDateString()}</td></tr>`;
+            }).join('') || '<tr><td colspan=5 style="text-align:center;color:var(--txt3)">No questions logged yet</td></tr>';
+        }
+
+        async function loadKB() {
+            const r = await fetch(API + '/admin/knowledge', { headers: hdr() });
+            const d = await r.json();
+            document.querySelector('#kbTable tbody').innerHTML = d.entries.map(e =>
+                `<tr><td><strong>${e.title}</strong></td><td>${e.category || '-'}</td><td>${new Date(e.updated_at).toLocaleDateString()}</td><td><button onclick="deleteKB('${e.id}')" style="background:var(--bg3);border:1px solid var(--border);color:var(--red);padding:4px 10px;border-radius:6px;cursor:pointer;font-size:0.75rem">🗑️</button></td></tr>`
+            ).join('');
+        }
+
+        async function loadUsers() {
+            const r = await fetch(API + '/admin/users', { headers: hdr() });
+            const d = await r.json();
+            document.querySelector('#usersTable tbody').innerHTML = d.users.map(u =>
+                `<tr><td>${u.full_name}</td><td>${u.email}</td><td><span class="badge ${u.role === 'admin' ? 'high' : 'med'}">${u.role}</span></td><td>${new Date(u.created_at).toLocaleDateString()}</td></tr>`
+            ).join('');
+        }
+
+        async function addKBEntry() {
+            const body = {
+                title: document.getElementById('kbTitle').value,
+                title_ar: document.getElementById('kbTitleAr').value,
+                content: document.getElementById('kbContent').value,
+                content_ar: document.getElementById('kbContentAr').value,
+                category: document.getElementById('kbCategory').value,
+                source: document.getElementById('kbSource').value
+            };
+            if (!body.title || !body.content) return alert('Title and content required');
+            await fetch(API + '/admin/knowledge', { method: 'POST', headers: hdr(), body: JSON.stringify(body) });
+            document.querySelectorAll('.kb-form input, .kb-form textarea').forEach(i => i.value = '');
+            loadKB();
+        }
+
+        async function deleteKB(id) {
+            if (!confirm('Delete this entry?')) return;
+            await fetch(API + '/admin/knowledge/' + id, { method: 'DELETE', headers: hdr() });
+            loadKB();
+        }
+    </script>
+</body>
+
+</html>
