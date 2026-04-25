@@ -16,7 +16,7 @@
 
 Full Stack Developer with **1+ years of hands-on experience** building **14 real-world projects** spanning web applications, mobile apps, desktop software, computer vision, and robotics. Proficient in a wide range of technologies from frontend to backend, with a strong focus on modern design, clean architecture, and user experience.
 
-Currently seeking a **Master's program in Computer Science / Software Engineering** to deepen my expertise and contribute to innovative research.
+Currently seeking a **Full-Time Software Engineering / Full Stack Developer position** to apply my skills in a professional environment and contribute to impactful products.
 
 ---
 
@@ -347,7 +347,7 @@ g++ robot_simulator.cpp -o robot_simulator && ./robot_simulator
 
 <div align="center">
 
-**📄 Open for opportunities — Freelance, Internships & Master's Programs**
+**📄 Open for opportunities — Full-Time, Freelance & Internships**
 
 Made with ❤️ by **Mohammad Olleik** · Lebanon 🇱🇧
 
