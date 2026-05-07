@@ -1,0 +1,729 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIOK Trading — XAUUSD Trading Intelligence</title>
+    <meta name="description" content="AI-Powered XAUUSD Trading Signal System with Multi-Indicator Confluence">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css?v=2">
+    <!-- TradingView Lightweight Charts -->
+    <script src="https://unpkg.com/lightweight-charts@4.1.1/dist/lightweight-charts.standalone.production.js"></script>
+</head>
+<body>
+    <!-- Ambient Background Effects -->
+    <div class="ambient-bg">
+        <div class="ambient-orb orb-1"></div>
+        <div class="ambient-orb orb-2"></div>
+        <div class="ambient-orb orb-3"></div>
+    </div>
+
+    <!-- Header -->
+    <header id="main-header" class="header">
+        <div class="header-left">
+            <div class="logo">
+                <div class="logo-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <path d="M16 2L28 8V24L16 30L4 24V8L16 2Z" stroke="url(#logo-grad)" stroke-width="2" fill="none"/>
+                        <path d="M16 8L22 11V21L16 24L10 21V11L16 8Z" fill="url(#logo-grad)" opacity="0.3"/>
+                        <circle cx="16" cy="16" r="3" fill="url(#logo-grad)"/>
+                        <defs>
+                            <linearGradient id="logo-grad" x1="4" y1="2" x2="28" y2="30">
+                                <stop offset="0%" stop-color="#f59e0b"/>
+                                <stop offset="100%" stop-color="#d97706"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-name">AIOK<span class="logo-ai">AI</span></span>
+                    <span class="logo-sub">XAUUSD INTELLIGENCE</span>
+                </div>
+            </div>
+        </div>
+        <div class="header-center">
+            <div class="connection-status" id="connection-status">
+                <span class="status-dot"></span>
+                <span class="status-text">OFFLINE — Start Backend</span>
+            </div>
+            <div class="timeframe-selector" id="timeframe-selector">
+                <button class="tf-btn" data-tf="M5">M5</button>
+                <button class="tf-btn active" data-tf="M15">M15</button>
+                <button class="tf-btn" data-tf="H1">H1</button>
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="mode-selector" id="mode-selector">
+                <button class="mode-btn active" data-mode="signal" title="Signal Only">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                    <span>Signal</span>
+                </button>
+                <button class="mode-btn" data-mode="semi" title="Semi-Auto">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/></svg>
+                    <span>Semi</span>
+                </button>
+                <button class="mode-btn" data-mode="auto" title="Full Auto">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 8v4l3 3"/></svg>
+                    <span>Auto</span>
+                </button>
+            </div>
+            <div class="header-time" id="header-time">--:--:--</div>
+        </div>
+    </header>
+
+    <!-- Main Dashboard Grid -->
+    <main class="dashboard">
+        <!-- Row 1: Price + Signal + Account -->
+        <section class="dashboard-row row-1">
+            <!-- Price Panel -->
+            <div class="card price-card" id="price-card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <span class="symbol-badge">XAU/USD</span>
+                        <span class="card-label">GOLD SPOT</span>
+                    </div>
+                    <div class="card-spread" id="spread-display">Spread: --</div>
+                </div>
+                <div class="price-main">
+                    <span class="price-value" id="price-value">-----.--</span>
+                    <span class="price-change" id="price-change">
+                        <span class="change-arrow">▲</span>
+                        <span class="change-value">+0.00</span>
+                        <span class="change-pct">(0.00%)</span>
+                    </span>
+                </div>
+                <div class="price-details">
+                    <div class="price-detail">
+                        <span class="detail-label">BID</span>
+                        <span class="detail-value" id="bid-price">-----.--</span>
+                    </div>
+                    <div class="price-detail">
+                        <span class="detail-label">ASK</span>
+                        <span class="detail-value" id="ask-price">-----.--</span>
+                    </div>
+                    <div class="price-detail">
+                        <span class="detail-label">HIGH</span>
+                        <span class="detail-value" id="high-price">-----.--</span>
+                    </div>
+                    <div class="price-detail">
+                        <span class="detail-label">LOW</span>
+                        <span class="detail-value" id="low-price">-----.--</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Signal Panel — Professional Style -->
+            <div class="card signal-card" id="signal-card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                        <span class="card-label">AI SIGNAL</span>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:8px;">
+                        <span class="signal-lifecycle-badge" id="lifecycle-badge">SCANNING</span>
+                        <div class="signal-time" id="signal-time">--:--</div>
+                    </div>
+                </div>
+
+                <!-- Signal Direction + Score -->
+                <div class="signal-main" id="signal-display">
+                    <div class="signal-direction waiting" id="signal-direction">
+                        <span class="signal-icon">⏳</span>
+                        <span class="signal-text">SCANNING</span>
+                    </div>
+                    <div class="signal-confidence">
+                        <div class="confidence-label">CONFLUENCE SCORE</div>
+                        <div class="confidence-bar-container">
+                            <div class="confidence-bar" id="confidence-bar" style="width: 0%"></div>
+                        </div>
+                        <div class="confidence-value" id="confidence-value">0/10</div>
+                    </div>
+                </div>
+
+                <!-- Signal Message -->
+                <div class="signal-message" id="signal-message" style="padding:8px 16px; font-size:13px; color:#a0a0b0; text-align:center;">
+                    Scanning for 7+/10 signals...
+                </div>
+
+                <!-- 3 TP Targets Panel (hidden until signal) -->
+                <div class="signal-targets" id="signal-targets" style="display:none;">
+                    <div class="target-row entry-row">
+                        <span class="target-label">ENTRY</span>
+                        <span class="target-price" id="entry-price">---</span>
+                    </div>
+                    <div class="target-row optimal-row" id="optimal-entry-row" style="display:none;">
+                        <span class="target-label" style="color:#ffd700;">⏳ OPTIMAL</span>
+                        <span class="target-price" id="optimal-entry-price" style="color:#ffd700;">---</span>
+                        <span class="target-status" id="optimal-entry-reason" style="font-size:10px; color:#a0a0b0;"></span>
+                    </div>
+                    <div class="target-row tp-row" id="tp1-row">
+                        <span class="target-label">TP1</span>
+                        <span class="target-price" id="tp1-price">---</span>
+                        <span class="target-status" id="tp1-status">⏳</span>
+                    </div>
+                    <div class="target-row tp-row" id="tp2-row">
+                        <span class="target-label">TP2</span>
+                        <span class="target-price" id="tp2-price">---</span>
+                        <span class="target-status" id="tp2-status">⏳</span>
+                    </div>
+                    <div class="target-row tp-row" id="tp3-row">
+                        <span class="target-label">TP3</span>
+                        <span class="target-price" id="tp3-price">---</span>
+                        <span class="target-status" id="tp3-status">⏳</span>
+                    </div>
+                    <div class="target-row sl-row">
+                        <span class="target-label">SL</span>
+                        <span class="target-price" id="sl-price">---</span>
+                        <span class="target-status" id="sl-status">🛡️</span>
+                    </div>
+                </div>
+
+                <!-- Signal Meta -->
+                <div class="signal-meta" id="signal-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">ML Probability</span>
+                        <span class="meta-value" id="ml-prob">--%</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Risk:Reward</span>
+                        <span class="meta-value" id="risk-reward">--</span>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="signal-actions" id="signal-actions" style="display:none;">
+                    <button class="action-btn enter-btn" id="btn-enter-trade" onclick="enterTrade()">
+                        ✅ دخلت الصفقة
+                    </button>
+                    <button class="action-btn skip-btn" id="btn-skip-signal" onclick="skipSignal()">
+                        ⏭️ Skip — توصية جديدة
+                    </button>
+                </div>
+
+                <!-- Tracking buttons (shown when tracking) -->
+                <div class="signal-actions" id="tracking-actions" style="display:none;">
+                    <button class="action-btn close-btn" id="btn-close-trade" onclick="closeTrade()">
+                        🔒 أغلقت الصفقة
+                    </button>
+                </div>
+
+                <!-- Completed buttons (shown when completed) -->
+                <div class="signal-actions" id="completed-actions" style="display:none;">
+                    <button class="action-btn skip-btn" id="btn-next-signal" onclick="skipSignal()">
+                        ⏭️ التوصية التالية
+                    </button>
+                </div>
+            </div>
+
+            <!-- 📰 News Events Panel -->
+            <div class="card" id="news-card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <span>📰</span>
+                        <span class="card-label">TODAY'S EVENTS</span>
+                    </div>
+                    <span id="news-count" style="color:#ffd700; font-size:12px;"></span>
+                </div>
+                <div id="news-warnings" style="padding:0 16px;"></div>
+                <div id="news-events" style="padding:8px 16px; font-size:12px;"></div>
+            </div>
+
+            <!-- Account Panel -->
+            <div class="card account-card" id="account-card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 10h20"/></svg>
+                        <span class="card-label">ACCOUNT</span>
+                    </div>
+                    <span class="broker-badge">BYBIT</span>
+                </div>
+                <div class="account-stats">
+                    <div class="stat-item primary">
+                        <span class="stat-label">Balance</span>
+                        <span class="stat-value" id="account-balance">$0.00</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Equity</span>
+                        <span class="stat-value" id="account-equity">$0.00</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Free Margin</span>
+                        <span class="stat-value" id="account-margin">$0.00</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Daily P&L</span>
+                        <span class="stat-value profit" id="daily-pnl">$0.00</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Open Positions</span>
+                        <span class="stat-value" id="open-positions">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Lot Size</span>
+                        <span class="stat-value" id="lot-size">0.01</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== AUTO BOT PANEL ====== -->
+        <section class="dashboard-row row-bot">
+            <div class="card bot-card" id="bot-card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 8v4l3 3"/></svg>
+                        <span class="card-label">AUTO TRADING BOT</span>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:10px;">
+                        <span class="bot-power-indicator inactive" id="bot-power-indicator">🔴 BOT OFF</span>
+                        <span class="bot-badge" id="bot-target-badge" style="display:none;"></span>
+                    </div>
+                </div>
+
+                <div class="bot-panel">
+                    <!-- Left: Controls + Status -->
+                    <div class="bot-controls-section">
+                        <div class="bot-buttons">
+                            <button class="bot-btn start" id="bot-start-btn">
+                                <span>▶</span> START BOT
+                            </button>
+                            <button class="bot-btn stop" id="bot-stop-btn" style="display:none;">
+                                <span>⏹</span> STOP BOT
+                            </button>
+                            <button class="bot-btn emergency" id="bot-emergency-btn">
+                                <span>🚨</span> EMERGENCY
+                            </button>
+                        </div>
+                        <div class="bot-status-msg" id="bot-status-message">Bot stopped</div>
+
+                        <!-- Daily P&L Bar -->
+                        <div class="bot-pnl-section">
+                            <div class="bot-pnl-header">
+                                <span>Daily P&L</span>
+                                <span class="bot-stat-value positive" id="bot-daily-pnl">+$0.00</span>
+                            </div>
+                            <div class="bot-pnl-bar">
+                                <div class="bot-pnl-bar-fill positive" id="bot-pnl-bar" style="width:40%;"></div>
+                            </div>
+                            <div class="bot-pnl-labels">
+                                <span class="negative">-$2</span>
+                                <span>$0</span>
+                                <span class="positive">+$3</span>
+                            </div>
+                        </div>
+
+                        <!-- Stats Grid -->
+                        <div class="bot-stats-grid">
+                            <div class="bot-stat">
+                                <span class="bot-stat-label">Trades</span>
+                                <span class="bot-stat-val" id="bot-daily-trades">0</span>
+                            </div>
+                            <div class="bot-stat">
+                                <span class="bot-stat-label">Wins</span>
+                                <span class="bot-stat-val positive" id="bot-daily-wins">0</span>
+                            </div>
+                            <div class="bot-stat">
+                                <span class="bot-stat-label">Losses</span>
+                                <span class="bot-stat-val negative" id="bot-daily-losses">0</span>
+                            </div>
+                            <div class="bot-stat">
+                                <span class="bot-stat-label">Win Rate</span>
+                                <span class="bot-stat-val" id="bot-win-rate">0%</span>
+                            </div>
+                            <div class="bot-stat">
+                                <span class="bot-stat-label">Streak</span>
+                                <span class="bot-stat-val" id="bot-streak">W</span>
+                            </div>
+                        </div>
+
+                        <!-- Current Trade -->
+                        <div id="bot-current-trade" style="display:none;"></div>
+                    </div>
+
+                    <!-- Middle: Settings -->
+                    <div class="bot-settings-section">
+                        <div class="bot-settings-title">⚙️ Settings</div>
+                        <div class="bot-settings-grid">
+                            <label>Lot Size
+                                <input type="number" id="bot-lot-size" value="0.01" min="0.01" max="0.10" step="0.01">
+                            </label>
+                            <label>TP ($)
+                                <input type="number" id="bot-tp" value="5" min="1" max="20" step="0.5">
+                            </label>
+                            <label>SL ($)
+                                <input type="number" id="bot-sl" value="4" min="1" max="20" step="0.5">
+                            </label>
+                            <label>Min Score
+                                <input type="number" id="bot-min-score" value="7" min="5" max="10" step="1">
+                            </label>
+                            <label>Max Trades
+                                <input type="number" id="bot-max-trades" value="5" min="1" max="20" step="1">
+                            </label>
+                            <label>Target ($)
+                                <input type="number" id="bot-daily-target" value="3" min="0.5" max="50" step="0.5">
+                            </label>
+                            <label>Loss Limit ($)
+                                <input type="number" id="bot-daily-loss" value="2" min="0.5" max="50" step="0.5">
+                            </label>
+                        </div>
+                        <button class="bot-btn save" id="bot-save-settings">💾 Save Settings</button>
+                    </div>
+
+                    <!-- Right: Trade History -->
+                    <div class="bot-history-section">
+                        <div class="bot-settings-title">📋 Bot Trades Today</div>
+                        <div class="bot-history-list" id="bot-history-list">
+                            <div class="bot-history-empty">No trades yet today</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Row 2: Chart -->
+        <section class="dashboard-row row-2">
+            <div class="card chart-card" id="chart-card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 16l4-8 4 4 6-10"/></svg>
+                        <span class="card-label">XAUUSD CHART</span>
+                        <span class="chart-tf-label" id="chart-tf-label">M15</span>
+                    </div>
+                    <div class="chart-controls">
+                        <button class="chart-ctrl-btn active" data-type="candle" title="Candlestick">🕯️</button>
+                        <button class="chart-ctrl-btn" data-type="line" title="Line">📈</button>
+                        <button class="chart-ctrl-btn indicator-toggle" id="toggle-indicators" title="Toggle Indicators">📊</button>
+                    </div>
+                </div>
+                <div class="chart-container" id="chart-container"></div>
+            </div>
+        </section>
+
+        <!-- Row 3: Indicators + Risk -->
+        <section class="dashboard-row row-3">
+            <!-- Indicators Panel -->
+            <div class="card indicators-card" id="indicators-card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        <span class="card-label">INDICATOR ENGINE</span>
+                    </div>
+                    <div class="engine-status" id="engine-status">
+                        <span class="engine-dot active"></span>
+                        <span>ACTIVE</span>
+                    </div>
+                </div>
+                <div class="indicators-grid" id="indicators-grid">
+                    <!-- RSI -->
+                    <div class="indicator-item" id="ind-rsi">
+                        <div class="ind-header">
+                            <span class="ind-name">RSI (14)</span>
+                            <span class="ind-signal neutral" id="rsi-signal">NEUTRAL</span>
+                        </div>
+                        <div class="ind-bar-container">
+                            <div class="ind-bar" id="rsi-bar" style="width: 0%"></div>
+                            <div class="ind-zones">
+                                <span class="zone-mark" style="left:30%">30</span>
+                                <span class="zone-mark" style="left:70%">70</span>
+                            </div>
+                        </div>
+                        <span class="ind-value" id="rsi-value">--</span>
+                    </div>
+                    <!-- MACD -->
+                    <div class="indicator-item" id="ind-macd">
+                        <div class="ind-header">
+                            <span class="ind-name">MACD (12,26,9)</span>
+                            <span class="ind-signal neutral" id="macd-signal">NEUTRAL</span>
+                        </div>
+                        <div class="ind-macd-visual">
+                            <div class="macd-histogram" id="macd-histogram">
+                                <div class="hist-bar" style="height: 0%"></div>
+                            </div>
+                        </div>
+                        <span class="ind-value" id="macd-value">0.00</span>
+                    </div>
+                    <!-- Bollinger Bands -->
+                    <div class="indicator-item" id="ind-bb">
+                        <div class="ind-header">
+                            <span class="ind-name">BB (20,2)</span>
+                            <span class="ind-signal neutral" id="bb-signal">NEUTRAL</span>
+                        </div>
+                        <div class="ind-bb-visual">
+                            <div class="bb-band" id="bb-visual">
+                                <div class="bb-upper"></div>
+                                <div class="bb-price"></div>
+                                <div class="bb-lower"></div>
+                            </div>
+                        </div>
+                        <span class="ind-value" id="bb-value">Mid: --</span>
+                    </div>
+                    <!-- EMA Cross -->
+                    <div class="indicator-item" id="ind-ema">
+                        <div class="ind-header">
+                            <span class="ind-name">EMA (50/200)</span>
+                            <span class="ind-signal neutral" id="ema-signal">NEUTRAL</span>
+                        </div>
+                        <div class="ind-ema-visual">
+                            <span class="ema-label">50: <span id="ema50-val">--</span></span>
+                            <span class="ema-label">200: <span id="ema200-val">--</span></span>
+                        </div>
+                        <span class="ind-value" id="ema-value">--</span>
+                    </div>
+                    <!-- Ichimoku -->
+                    <div class="indicator-item" id="ind-ichimoku">
+                        <div class="ind-header">
+                            <span class="ind-name">ICHIMOKU</span>
+                            <span class="ind-signal neutral" id="ichimoku-signal">NEUTRAL</span>
+                        </div>
+                        <div class="ind-cloud-visual">
+                            <div class="cloud-indicator" id="cloud-visual">
+                                <div class="cloud-layer"></div>
+                            </div>
+                        </div>
+                        <span class="ind-value" id="ichimoku-value">--</span>
+                    </div>
+                    <!-- Stochastic RSI -->
+                    <div class="indicator-item" id="ind-stochrsi">
+                        <div class="ind-header">
+                            <span class="ind-name">STOCH RSI</span>
+                            <span class="ind-signal neutral" id="stochrsi-signal">NEUTRAL</span>
+                        </div>
+                        <div class="ind-bar-container">
+                            <div class="ind-bar" id="stochrsi-bar" style="width: 0%"></div>
+                            <div class="ind-zones">
+                                <span class="zone-mark" style="left:20%">20</span>
+                                <span class="zone-mark" style="left:80%">80</span>
+                            </div>
+                        </div>
+                        <span class="ind-value" id="stochrsi-value">--</span>
+                    </div>
+                    <!-- ATR -->
+                    <div class="indicator-item" id="ind-atr">
+                        <div class="ind-header">
+                            <span class="ind-name">ATR (14)</span>
+                            <span class="ind-signal neutral" id="atr-signal">NORMAL</span>
+                        </div>
+                        <div class="ind-atr-visual">
+                            <div class="atr-meter" id="atr-meter">
+                                <div class="atr-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <span class="ind-value" id="atr-value">--</span>
+                    </div>
+                    <!-- Volume -->
+                    <div class="indicator-item" id="ind-volume">
+                        <div class="ind-header">
+                            <span class="ind-name">VOLUME</span>
+                            <span class="ind-signal neutral" id="volume-signal">NORMAL</span>
+                        </div>
+                        <div class="ind-vol-visual">
+                            <div class="vol-bars" id="vol-bars">
+                                <div class="vol-bar" style="height:30%"></div>
+                                <div class="vol-bar" style="height:50%"></div>
+                                <div class="vol-bar" style="height:40%"></div>
+                                <div class="vol-bar" style="height:80%"></div>
+                                <div class="vol-bar active" style="height:60%"></div>
+                            </div>
+                        </div>
+                        <span class="ind-value" id="volume-value">--</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Risk & Multi-TF Panel -->
+            <div class="card risk-card" id="risk-card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        <span class="card-label">RISK MANAGEMENT</span>
+                    </div>
+                </div>
+                <div class="risk-metrics">
+                    <div class="risk-item">
+                        <span class="risk-label">Stop Loss</span>
+                        <span class="risk-value loss" id="sl-value">--</span>
+                    </div>
+                    <div class="risk-item">
+                        <span class="risk-label">Take Profit</span>
+                        <span class="risk-value profit" id="tp-value">--</span>
+                    </div>
+                    <div class="risk-item">
+                        <span class="risk-label">Risk Amount</span>
+                        <span class="risk-value" id="risk-amount">$0.00</span>
+                    </div>
+                    <div class="risk-item">
+                        <span class="risk-label">Potential Reward</span>
+                        <span class="risk-value profit" id="reward-amount">$0.00</span>
+                    </div>
+                </div>
+                <div class="separator"></div>
+                <div class="card-header">
+                    <div class="card-title">
+                        <span class="card-label">MULTI-TIMEFRAME</span>
+                    </div>
+                </div>
+                <div class="mtf-grid" id="mtf-grid">
+                    <div class="mtf-item">
+                        <span class="mtf-tf">M5</span>
+                        <span class="mtf-signal neutral" id="mtf-m5">NEUTRAL</span>
+                    </div>
+                    <div class="mtf-item">
+                        <span class="mtf-tf">M15</span>
+                        <span class="mtf-signal neutral" id="mtf-m15">NEUTRAL</span>
+                    </div>
+                    <div class="mtf-item">
+                        <span class="mtf-tf">H1</span>
+                        <span class="mtf-signal neutral" id="mtf-h1">NEUTRAL</span>
+                    </div>
+                </div>
+                <div class="separator"></div>
+                <div class="performance-stats">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <span class="card-label">PERFORMANCE</span>
+                        </div>
+                    </div>
+                    <div class="perf-grid">
+                        <div class="perf-item">
+                            <span class="perf-label">Win Rate</span>
+                            <span class="perf-value" id="win-rate">--%</span>
+                        </div>
+                        <div class="perf-item">
+                            <span class="perf-label">Total Trades</span>
+                            <span class="perf-value" id="total-trades">0</span>
+                        </div>
+                        <div class="perf-item">
+                            <span class="perf-label">Profit Factor</span>
+                            <span class="perf-value" id="profit-factor">0.0</span>
+                        </div>
+                        <div class="perf-item">
+                            <span class="perf-label">Max Drawdown</span>
+                            <span class="perf-value" id="max-drawdown">0%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Row 4: Trade History -->
+        <section class="dashboard-row row-4">
+            <div class="card trades-card" id="trades-card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        <span class="card-label">TRADE HISTORY</span>
+                    </div>
+                    <div class="trade-filter">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="open">Open</button>
+                        <button class="filter-btn" data-filter="closed">Closed</button>
+                    </div>
+                </div>
+                <div class="trades-table-wrapper">
+                    <table class="trades-table" id="trades-table">
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Type</th>
+                                <th>Entry</th>
+                                <th>SL</th>
+                                <th>TP</th>
+                                <th>Lot</th>
+                                <th>Score</th>
+                                <th>P&L</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="trades-body">
+                            <tr class="empty-row">
+                                <td colspan="9">
+                                    <div class="empty-state">
+                                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" opacity="0.3"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                                        <span>No trades yet — waiting for signals</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Row 5: Signal History (Strong Signals 7+/15) -->
+        <section class="dashboard-row row-5">
+            <div class="card signal-history-card" id="signal-history-card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
+                        <span class="card-label">SIGNAL HISTORY</span>
+                        <span class="history-badge" id="history-count">0 signals</span>
+                    </div>
+                    <div class="history-filter">
+                        <button class="filter-btn active" data-hist-filter="all" id="hist-filter-all">All 6+</button>
+                        <button class="filter-btn" data-hist-filter="strong" id="hist-filter-strong">8+ Strong</button>
+                        <button class="filter-btn" data-hist-filter="buy" id="hist-filter-buy">Buy</button>
+                        <button class="filter-btn" data-hist-filter="sell" id="hist-filter-sell">Sell</button>
+                        <button class="filter-btn clear-btn" id="hist-clear">Clear</button>
+                    </div>
+                </div>
+                <div class="signal-history-wrapper">
+                    <table class="signal-history-table" id="signal-history-table">
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Direction</th>
+                                <th>Score</th>
+                                <th>Price</th>
+                                <th>SL</th>
+                                <th>TP</th>
+                                <th>R:R</th>
+                                <th>Pattern</th>
+                                <th>Session</th>
+                                <th>Strength</th>
+                            </tr>
+                        </thead>
+                        <tbody id="signal-history-body">
+                            <tr class="empty-row">
+                                <td colspan="10">
+                                    <div class="empty-state">
+                                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" opacity="0.3"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
+                                        <span>Waiting for strong signals (6+/10)...</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Signal Log Sidebar (expandable) -->
+        <div class="signal-log" id="signal-log">
+            <div class="log-header">
+                <span class="card-label">SIGNAL LOG</span>
+                <button class="log-toggle" id="log-toggle">◀</button>
+            </div>
+            <div class="log-entries" id="log-entries">
+                <div class="log-entry info">
+                    <span class="log-time">--:--:--</span>
+                    <span class="log-msg">System initializing...</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Audio for notifications -->
+    <audio id="signal-audio-buy" preload="auto">
+        <source src="data:audio/wav;base64,UklGRl9vT19teleWF2teleR" type="audio/wav">
+    </audio>
+
+    <!-- Scripts (cache-busted) -->
+    <script src="js/api.js?v=2"></script>
+    <script src="js/charts.js?v=2"></script>
+    <script src="js/signals.js?v=2"></script>
+    <script src="js/auto_bot.js?v=2"></script>
+    <script src="js/app.js?v=2"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+{
+  "expo": {
+    "name": "Lebanon Red Alert",
+    "slug": "lebalert",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "backgroundColor": "#0a0a0f"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.lebalert.app",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "We need your location to provide region-based alerts",
+        "UIBackgroundModes": [
+          "remote-notification"
+        ]
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#0a0a0f"
+      },
+      "package": "com.lebalert.app",
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "VIBRATE",
+        "RECEIVE_BOOT_COMPLETED"
+      ]
+    },
+    "plugins": [
+      "expo-notifications",
+      "expo-location"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "7ddd1cc8-b0a9-40c6-8572-ac29c193b908"
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="100" fill="#0a0e13"/>
+  <rect width="512" height="512" rx="100" fill="url(#grad)"/>
+  <defs>
+    <radialGradient id="grad" cx="30%" cy="30%">
+      <stop offset="0%" stop-color="#00e676" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#0a0e13" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <!-- Chat bubble -->
+  <path d="M100 145 Q100 98 147 98 L365 98 Q412 98 412 145 L412 285 Q412 332 365 332 L268 332 L200 400 L200 332 L147 332 Q100 332 100 285 Z" fill="#00e676"/>
+  <!-- Dots inside bubble -->
+  <circle cx="193" cy="213" r="22" fill="#0a0e13"/>
+  <circle cx="256" cy="213" r="22" fill="#0a0e13"/>
+  <circle cx="319" cy="213" r="22" fill="#0a0e13"/>
+</svg>

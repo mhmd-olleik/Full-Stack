@@ -1,25 +1,18 @@
 /* ============================================
    Amy Eventsängerin – Service Worker
-   Cache-first strategy with background updates
+   Network-first for HTML/CSS/JS, Cache-first for images
    ============================================ */
 
-const CACHE_VERSION = 'amy-v1.0';
+const CACHE_VERSION = 'amy-v3.0';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
   '/styles.css',
   '/script.js',
-  '/manifest.json',
-  '/images/hero-stage.jpg',
-  '/images/outdoor-field.jpg',
-  '/images/event-performance.jpg',
-  '/images/church-singing.jpg',
-  '/images/guitar-cowboy.jpg',
-  '/icons/icon-192.png',
-  '/icons/icon-512.png'
+  '/manifest.json'
 ];
 
-// Install – cache all critical assets
+// Install – cache critical assets
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_VERSION)
@@ -31,7 +24,7 @@ self.addEventListener('install', (event) => {
   );
 });
 
-// Activate – clean up old caches
+// Activate – delete ALL old caches immediately
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((cacheNames) => {
@@ -47,42 +40,62 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Fetch – cache-first, fallback to network, update cache
+// Fetch strategy
 self.addEventListener('fetch', (event) => {
-  // Skip non-GET requests
   if (event.request.method !== 'GET') return;
 
-  // Skip cross-origin requests (except Google Fonts)
   const url = new URL(event.request.url);
-  if (url.origin !== location.origin && 
+
+  // Skip cross-origin (except Google Fonts)
+  if (url.origin !== location.origin &&
       !url.hostname.includes('fonts.googleapis.com') &&
       !url.hostname.includes('fonts.gstatic.com')) {
     return;
   }
 
-  event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
-      // Return cached version and update in background
-      const fetchPromise = fetch(event.request)
-        .then((networkResponse) => {
-          // Only cache valid responses
-          if (networkResponse && networkResponse.status === 200) {
-            const responseClone = networkResponse.clone();
-            caches.open(CACHE_VERSION).then((cache) => {
-              cache.put(event.request, responseClone);
-            });
-          }
-          return networkResponse;
-        })
-        .catch(() => {
-          // Network failed, return offline fallback for navigation
-          if (event.request.mode === 'navigate') {
-            return caches.match('/index.html');
-          }
-          return null;
-        });
+  const isPage = event.request.mode === 'navigate';
+  const isAsset = url.pathname.endsWith('.css') || url.pathname.endsWith('.js');
+  const isImage = url.pathname.startsWith('/images/') || url.pathname.startsWith('/icons/');
 
-      return cachedResponse || fetchPromise;
-    })
-  );
+  if (isPage || isAsset) {
+    // NETWORK-FIRST for HTML, CSS, JS → always fresh content!
+    event.respondWith(
+      fetch(event.request)
+        .then((response) => {
+          if (response && response.status === 200) {
+            const clone = response.clone();
+            caches.open(CACHE_VERSION).then((cache) => cache.put(event.request, clone));
+          }
+          return response;
+        })
+        .catch(() => caches.match(event.request).then((cached) => cached || caches.match('/index.html')))
+    );
+  } else if (isImage) {
+    // CACHE-FIRST for images (they rarely change, saves bandwidth)
+    event.respondWith(
+      caches.match(event.request).then((cached) => {
+        if (cached) return cached;
+        return fetch(event.request).then((response) => {
+          if (response && response.status === 200) {
+            const clone = response.clone();
+            caches.open(CACHE_VERSION).then((cache) => cache.put(event.request, clone));
+          }
+          return response;
+        });
+      })
+    );
+  } else {
+    // Default: network with cache fallback
+    event.respondWith(
+      fetch(event.request)
+        .then((response) => {
+          if (response && response.status === 200) {
+            const clone = response.clone();
+            caches.open(CACHE_VERSION).then((cache) => cache.put(event.request, clone));
+          }
+          return response;
+        })
+        .catch(() => caches.match(event.request))
+    );
+  }
 });

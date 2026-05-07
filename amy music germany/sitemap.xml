@@ -1,9 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://amy-eventsaengerin.de/</loc>
-    <lastmod>2026-03-20</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://amyymusic.com/</loc>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://amyymusic.com/images/hero-stage.jpg</image:loc>
+      <image:title>Amy Eventsängerin auf der Bühne – Live-Musik mit Gitarre und Gesang</image:title>
+      <image:caption>Amy performt Live-Musik mit Gitarre und Gesang auf der Bühne</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://amyymusic.com/images/photo_2026-03-20_20-22-27.jpg</image:loc>
+      <image:title>Amy spielt Gitarre im Studio</image:title>
+      <image:caption>Amy bei einer Studio-Session mit Gitarre</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://amyymusic.com/images/photo_2026-03-20_20-22-40.jpg</image:loc>
+      <image:title>Amy im blauen Kleid bei einer Bühnenshow</image:title>
+      <image:caption>Amy Eventsängerin bei einem Live-Auftritt auf der Bühne</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://amyymusic.com/images/photo_2026-03-20_20-22-34.jpg</image:loc>
+      <image:title>Amy singt live auf der Bühne</image:title>
+      <image:caption>Live-Auftritt von Amy als Eventsängerin</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://amyymusic.com/images/photo_2026-03-20_20-22-29.jpg</image:loc>
+      <image:title>Amy beim Festival-Auftritt</image:title>
+      <image:caption>Amy Eventsängerin bei einem Festival Live-Auftritt</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://amyymusic.com/images/newww.jpg</image:loc>
+      <image:title>Amy Outdoor Portrait</image:title>
+      <image:caption>Amy Eventsängerin Outdoor Portrait im Feld</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://amyymusic.com/images/amy.jpg</image:loc>
+      <image:title>Amy Night Portrait</image:title>
+      <image:caption>Amy Cowboy Portrait bei Nacht</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://amyymusic.com/images/guitar-cowboy.jpg</image:loc>
+      <image:title>Amy mit Cowboyhut und Gitarre – Country Vibes</image:title>
+      <image:caption>Amy singt Country mit Cowboyhut und Gitarre</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://amyymusic.com/images/photo_2026-03-20_20-22-32.jpg</image:loc>
+      <image:title>Amy Performance auf der Bühne</image:title>
+      <image:caption>Amy Eventsängerin bei einer Live-Performance</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://amyymusic.com/images/photo_2026-03-20_20-22-42.jpg</image:loc>
+      <image:title>Amy Akustik-Set</image:title>
+      <image:caption>Amy bei einem Akustik-Set Auftritt</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://amyymusic.com/images/photo_2026-03-20_20-22-46.jpg</image:loc>
+      <image:title>Amy Backstage mit Gitarre</image:title>
+      <image:caption>Amy Backstage mit Gitarre und Rockpostern</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://amyymusic.com/images/amyy.jpg</image:loc>
+      <image:title>Amy singt auf der Bühne mit Mikrofon</image:title>
+      <image:caption>Amy Eventsängerin bei einem Bühnenauftritt mit blauer Beleuchtung</image:caption>
+    </image:image>
   </url>
 </urlset>

@@ -1,4 +1,23 @@
+# Amy Eventsängerin – robots.txt
+# https://amyymusic.com
+
 User-agent: *
 Allow: /
+Allow: /images/
+Disallow: /sw.js
+Disallow: /manifest.json
 
-Sitemap: https://amy-eventsaengerin.de/sitemap.xml
+# Sitemap
+Sitemap: https://amyymusic.com/sitemap.xml
+
+# Crawl delay (optional, for polite crawling)
+Crawl-delay: 1
+
+# Google-specific
+User-agent: Googlebot
+Allow: /
+Allow: /images/
+
+# Google Image Bot
+User-agent: Googlebot-Image
+Allow: /images/

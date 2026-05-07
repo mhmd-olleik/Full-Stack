@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# Environment files
+.env
+.env.local
+.env.production
+
+# Build outputs
+.next/
+dist/
+build/
+
+# Mobile native builds
+mobile/android/
+mobile/ios/
+mobile/.expo/
+
+# Data files (seeded at runtime)
+backend/data/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Lock files (optional - uncomment to include)
+# package-lock.json
