@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammad Olleik — Full Stack Software Engineer</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        @page {
+            size: A4;
+            margin: 0
+        }
+
+        body {
+            font-family: Calibri, 'Segoe UI', Arial, sans-serif;
+            font-size: 10pt;
+            line-height: 1.3;
+            color: #1e293b;
+            background: #999;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact
+        }
+
+        .page {
+            width: 210mm;
+            max-width: 100%;
+            margin: 10px auto;
+            background: #fff;
+            padding: 10mm 12mm 8mm 12mm;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, .15)
+        }
+
+        @media print {
+            body {
+                background: #fff
+            }
+
+            .page {
+                margin: 0;
+                box-shadow: none;
+                padding: 10mm 12mm 8mm 12mm
+            }
+
+            .nb {
+                display: none !important
+            }
+        }
+
+        /* HEADER */
+        .hd {
+            text-align: center;
+            margin-bottom: 6px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #1e40af
+        }
+
+        .hd h1 {
+            font-size: 24pt;
+            font-weight: 700;
+            color: #0f172a;
+            line-height: 1.1
+        }
+
+        .hd .sb {
+            font-size: 12pt;
+            color: #1e40af;
+            font-weight: 500;
+            font-style: italic;
+            margin: 2px 0 5px
+        }
+
+        .ci {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1px 12px;
+            font-size: 9.5pt;
+            color: #1e40af
+        }
+
+        .ci span {
+            display: inline-flex;
+            align-items: center;
+            gap: 3px
+        }
+
+        .ci .ico {
+            width: 12px;
+            height: 12px;
+            flex-shrink: 0;
+            fill: #1e40af
+        }
+
+        .ci a {
+            color: #1e40af;
+            text-decoration: none
+        }
+
+        /* SECTION */
+        .s {
+            margin-bottom: 5px
+        }
+
+        .st {
+            font-size: 10pt;
+            font-weight: 700;
+            color: #0f172a;
+            text-transform: uppercase;
+            letter-spacing: .8px;
+            border-bottom: 1.5px solid #1e40af;
+            padding-bottom: 1px;
+            margin-bottom: 4px
+        }
+
+        /* PROFILE */
+        .pf {
+            font-size: 9.5pt;
+            line-height: 1.35
+        }
+
+        /* SKILLS - two column */
+        .sk {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1px 20px;
+            font-size: 9.5pt
+        }
+
+        .sk div {
+            padding: 1px 0
+        }
+
+        .sk b {
+            color: #0f172a
+        }
+
+        /* PROJECTS */
+        .pj {
+            margin-bottom: 4px
+        }
+
+        .pj .h {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline
+        }
+
+        .pj .n {
+            font-weight: 700;
+            color: #0f172a;
+            font-size: 10pt
+        }
+
+        .pj .t {
+            color: #475569;
+            font-style: italic;
+            font-size: 9pt
+        }
+
+        .pj .d {
+            font-size: 8.5pt;
+            color: #64748b
+        }
+
+        .pj p {
+            font-size: 9.5pt;
+            line-height: 1.3;
+            padding-left: 10px;
+            position: relative
+        }
+
+        .pj p::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #1e40af;
+            font-size: 7pt;
+            top: 1px
+        }
+
+        .pj .tk {
+            font-size: 8.5pt;
+            color: #64748b;
+            margin-top: 0px
+        }
+
+        /* EDUCATION */
+        .ed {
+            margin-bottom: 3px
+        }
+
+        .ed .h {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline
+        }
+
+        .ed .n {
+            font-weight: 700;
+            color: #0f172a;
+            font-size: 10pt
+        }
+
+        .ed .l {
+            font-size: 9pt;
+            color: #64748b
+        }
+
+        .ed .dt {
+            font-size: 8.5pt;
+            color: #64748b
+        }
+
+        .ed .dg {
+            font-size: 9.5pt;
+            font-weight: 600
+        }
+
+        .ed .dt2 {
+            font-size: 9pt;
+            color: #475569
+        }
+
+        /* COURSES */
+        .cr {
+            font-size: 9pt;
+            color: #1e293b;
+            line-height: 1.4
+        }
+
+        /* LANGUAGES */
+        .lg {
+            font-size: 9.5pt
+        }
+
+        .lg b {
+            color: #0f172a
+        }
+
+        /* BUTTON */
+        .nb {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #1e40af;
+            color: #fff;
+            border: none;
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 3px 12px rgba(30, 64, 175, .4)
+        }
+
+        .nb:hover {
+            background: #1e3a8a
+        }
+    </style>
+</head>
+
+<body>
+    <button class="nb" onclick="window.print()">📄 Save as PDF</button>
+    <div class="page">
+
+        <!-- HEADER -->
+        <div class="hd">
+            <h1>Mohammad Olleik</h1>
+            <div class="sb">Full Stack Software Engineer</div>
+            <div class="ci">
+                <span><svg class="ico" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><a href="mailto:olkdev313@gmail.com">olkdev313@gmail.com</a></span>
+                <span><svg class="ico" viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.07 21 3 13.93 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.46.57 3.58.11.33.03.7-.25 1.02l-2.2 2.19z"/></svg>+961 71 101 381</span>
+                <span><svg class="ico" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>Nabatieh, Lebanon</span>
+                <span><svg class="ico" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg><a href="https://olleikdev.netlify.app">olleikdev.netlify.app</a></span>
+                <span><svg class="ico" viewBox="0 0 24 24"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14m-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg><a href="https://linkedin.com/in/mohammad-olleik-397086384">linkedin.com/in/mohammad-olleik</a></span>
+                <span><svg class="ico" viewBox="0 0 24 24"><path d="M12 .3a12 12 0 00-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.1-.4-.6-1.6.1-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 016 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.9.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.2.9 2.3v3.4c0 .3.2.7.8.6A12 12 0 0012 .3"/></svg><a href="https://github.com/mhmd-olleik/Full-Stack">github.com/mhmd-olleik/Full-Stack</a></span>
+            </div>
+        </div>
+
+        <!-- PROFILE -->
+        <div class="s">
+            <div class="st">Profile</div>
+            <div class="pf">Full Stack Software Engineer with <b>21+ production-level applications</b> across web,
+                mobile, AI/ML, computer vision, embedded systems, and robotics. Pursuing a B.Sc. in Computer Science at
+                LIU (<b>GPA: 3.42/4.0</b>). Proficient in JavaScript/TypeScript, Python, React, Node.js, and Kotlin.
+                Experienced with real-time systems (Socket.IO), machine learning (scikit-learn, OpenAI Whisper), AI
+                prompt engineering, and cross-platform development (React Native). Certified in AI Prompt Engineering
+                (Dubai Future Foundation) and Android Development (SamDroid).</div>
+        </div>
+
+        <!-- SKILLS -->
+        <div class="s">
+            <div class="st">Technical Skills</div>
+            <div class="sk">
+                <div><b>Frontend:</b> HTML5, CSS3, JavaScript (ES6+), TypeScript, React, Next.js, Vite, TailwindCSS
+                </div>
+                <div><b>Backend:</b> Node.js, Express.js, Flask, REST APIs, JWT, Socket.IO</div>
+                <div><b>Mobile:</b> Kotlin, Android SDK, MVVM, Room DB, Retrofit, React Native, Expo</div>
+                <div><b>Database:</b> MongoDB, Mongoose, Room Database</div>
+                <div><b>AI & ML:</b> Python, scikit-learn, OpenAI Whisper, MediaPipe, OpenCV, NumPy, NLP</div>
+                <div><b>Cloud & DevOps:</b> Git, GitHub, Vercel, Render, Firebase, Cloudinary, PWA</div>
+                <div><b>Embedded & Robotics:</b> Arduino, Sensors, ROS2, roslib.js, C++ (OOP)</div>
+                <div><b>Other:</b> OpenGL, MetaTrader5 API, Telegram Bot API, Leaflet, FFmpeg</div>
+            </div>
+        </div>
+
+        <!-- PROJECTS -->
+        <div class="s">
+            <div class="st">Projects</div>
+
+            <div class="pj">
+                <div class="h"><span><span class="n">ChatApp</span> <span class="t">— Real-time Chat (Full
+                            Stack)</span></span><span class="d">03/2026 – 04/2026</span></div>
+                <p>WhatsApp-like chat app with <b>real-time messaging (Socket.IO)</b>, Google OAuth, group chats, file
+                    sharing (Cloudinary), typing indicators, read receipts, responsive design.</p>
+                <div class="tk"><b>Tech:</b> React, Vite, Node.js, Express, MongoDB, Socket.IO, Google OAuth,
+                    Cloudinary, JWT</div>
+            </div>
+
+            <div class="pj">
+                <div class="h"><span><span class="n">Lebanon Alert</span> <span class="t">— Emergency Alert System
+                            (Cross-Platform)</span></span><span class="d">04/2026 – 05/2026</span></div>
+                <p><b>Next.js web dashboard</b> (Leaflet maps) + <b>React Native/Expo mobile app</b> (push
+                    notifications) + Node.js backend with RSS aggregation, Firebase notifications, and real-time
+                    Socket.IO updates.</p>
+                <div class="tk"><b>Tech:</b> Next.js, React Native, Expo, Node.js, Express, MongoDB, Socket.IO,
+                    Firebase, Leaflet</div>
+            </div>
+
+            <div class="pj">
+                <div class="h"><span><span class="n">AIOK Trading</span> <span class="t">— AI Trading Intelligence (Full
+                            Stack)</span></span><span class="d">02/2026 – 04/2026</span></div>
+                <p>AI trading system with <b>8-indicator confluence engine</b>, ML signal generation (scikit-learn),
+                    auto-trading bot with MetaTrader5, risk management, Telegram VIP signals.</p>
+                <div class="tk"><b>Tech:</b> Python, Flask, scikit-learn, MetaTrader5, JavaScript, TradingView,
+                    Socket.IO, Telegram API</div>
+            </div>
+
+            <div class="pj">
+                <div class="h"><span><span class="n">Movies & Series</span> <span class="t">— Streaming Platform (Full
+                            Stack)</span></span><span class="d">05/2026 – 06/2026</span></div>
+                <p>Movie/series streaming platform with <b>Next.js 16 + React 19</b>, admin panel, content management,
+                    favorites system, search, <b>JWT auth with bcrypt</b>, MongoDB backend.</p>
+                <div class="tk"><b>Tech:</b> Next.js 16, React 19, TypeScript, TailwindCSS 4, MongoDB, JWT, bcrypt
+                </div>
+            </div>
+
+            <div class="pj">
+                <div class="h"><span><span class="n">Voice-to-Text Bot</span> <span class="t">— AI Speech Recognition
+                            (Telegram)</span></span><span class="d">06/2026 – 07/2026</span></div>
+                <p>Telegram bot converting voice/audio to text using <b>OpenAI Whisper</b> locally. Supports <b>99+
+                        languages</b>, configurable model sizes, FFmpeg audio pipeline.</p>
+                <div class="tk"><b>Tech:</b> Python, OpenAI Whisper, Telegram Bot API, FFmpeg</div>
+            </div>
+
+            <div class="pj">
+                <div class="h"><span><span class="n">LIU Chat Bot</span> <span class="t">— AI University Assistant (Full
+                            Stack)</span></span><span class="d">01/2026 – 02/2026</span></div>
+                <p>AI chatbot with <b>custom NLP engine</b>, 101-topic knowledge base, JWT authentication, admin panel,
+                    bilingual support (EN/AR).</p>
+                <div class="tk"><b>Tech:</b> Node.js, Express, JavaScript, AI/NLP Engine, JWT</div>
+            </div>
+
+            <div class="pj">
+                <div class="h"><span><span class="n">Badel w Bi3</span> <span class="t">— Online Marketplace (Full
+                            Stack)</span></span><span class="d">12/2025 – 01/2026</span></div>
+                <p>Marketplace platform with JWT auth, admin dashboard, RESTful API, security (Helmet.js). Built as
+                    <b>PWA with SEO optimization</b>.</p>
+                <div class="tk"><b>Tech:</b> Node.js, Express, MongoDB, JWT, JavaScript, HTML5, CSS3</div>
+            </div>
+
+            <div class="pj">
+                <div class="h"><span><span class="n">Air Writing & Eraser</span> <span class="t">— Computer
+                            Vision</span></span><span class="d">10/2025 – 11/2025</span></div>
+                <p>Real-time air drawing/erasing with <b>hand gesture recognition (MediaPipe)</b>, multi-threaded camera
+                    for high FPS.</p>
+                <div class="tk"><b>Tech:</b> Python, OpenCV, MediaPipe, NumPy</div>
+            </div>
+
+            <div style="font-size:7pt;color:#64748b;font-style:italic;margin-top:2px">+ 13 more projects including: OLK
+                Films (Next.js/SSR), IPTV World (Streaming SPA), ROS2 Robot Control, HK Collection (E-Commerce), Amy
+                Eventsängerin (PWA), LebanonEdu, Arduino IoT Projects (4), Android App (Kotlin/MVVM), C++ Robot
+                Simulator, 3D Viewers → <a href="https://github.com/mhmd-olleik/Full-Stack"
+                    style="color:#1e40af">github.com/mhmd-olleik/Full-Stack</a></div>
+        </div>
+
+        <!-- EDUCATION -->
+        <div class="s">
+            <div class="st">Education</div>
+            <div class="ed">
+                <div class="h"><span><span class="n">Lebanese International University (LIU)</span> <span class="l">—
+                            Nabatieh, Lebanon</span></span><span class="dt">10/2025 – Present</span></div>
+                <div class="dg">B.Sc. in Computer Science <span
+                        style="font-weight:400;font-size:8pt;color:#1e40af">| GPA: 3.42/4.0 — 1st Year Completed</span>
+                </div>
+                <div class="dt2">Coursework: Programming Fundamentals, Data Structures, Algorithms, Discrete Mathematics,
+                    Object-Oriented Programming
+                </div>
+            </div>
+            <div class="ed">
+                <div class="h"><span><span class="n">Al Rahma High School</span> <span class="l">— Nabatieh,
+                            Lebanon</span></span><span class="dt">2011 – 2025</span></div>
+                <div class="dg">Lebanese Baccalaureate — Sociology & Economics <span
+                        style="font-weight:400;font-size:7.5pt;color:#64748b">| 15.8/20 (Mention Bien)</span></div>
+            </div>
+        </div>
+
+        <!-- CERTIFICATIONS -->
+        <div class="s">
+            <div class="st">Certifications</div>
+            <div class="ed" style="margin-bottom:2px">
+                <div class="h"><span><span class="n">One Million Prompters</span> <span class="t">— AI Prompt Engineering</span></span><span class="d">07/2026</span></div>
+                <div class="dt2">Dubai Future Foundation & Dubai Centre for AI — Prompt engineering for AI systems, LLM integration, future-ready AI skills</div>
+            </div>
+            <div class="ed" style="margin-bottom:0">
+                <div class="h"><span><span class="n">Become an Android Developer</span> <span class="t">— Mobile Development</span></span><span class="d">11/2025 – 02/2026</span></div>
+                <div class="dt2">SamDroid Academy (Sam Shouman) — Kotlin, MVVM Architecture, Room DB, Retrofit, Navigation Component, Dark/Light Mode</div>
+            </div>
+        </div>
+
+        <!-- LANGUAGES -->
+        <div class="s">
+            <div class="st">Languages</div>
+            <div class="lg"><b>Arabic</b> (Native) &nbsp;&nbsp; <b>English</b> (Professional Working Proficiency)</div>
+        </div>
+
+    </div>
+</body>
+
+</html>

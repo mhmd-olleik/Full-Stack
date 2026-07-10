@@ -4,7 +4,8 @@
 
 ### Full Stack Developer · Software Engineer
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-17%20Projects-0A66C2?style=for-the-badge)](https://github.com/mhmd-olleik/Full-Stack)
+[![Portfolio](https://img.shields.io/badge/Portfolio-21%20Projects-0A66C2?style=for-the-badge)](https://github.com/mhmd-olleik/Full-Stack)
+[![GPA](https://img.shields.io/badge/GPA-3.42%2F4.0-success?style=for-the-badge)]()
 [![Location](https://img.shields.io/badge/📍-Lebanon-green?style=for-the-badge)]()
 [![Email](https://img.shields.io/badge/Email-olkdev313@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:olkdev313@gmail.com)
 
@@ -14,9 +15,18 @@
 
 ## 🎯 About
 
-Full Stack Developer with **1+ years of hands-on experience** building **17 real-world projects** spanning web applications, mobile apps, desktop software, AI & trading systems, computer vision, and robotics. Proficient in a wide range of technologies from frontend to backend, with a strong focus on modern design, clean architecture, and user experience.
+Full Stack Developer and **Computer Science student at LIU (3.42 GPA)** with **1+ years of hands-on experience** building **21 real-world projects** spanning web applications, mobile apps, desktop software, AI & trading systems, computer vision, embedded systems, and robotics. Proficient in a wide range of technologies from frontend to backend, with a strong focus on modern design, clean architecture, and user experience.
 
 Currently seeking a **Full-Time Software Engineering / Full Stack Developer position** to apply my skills in a professional environment and contribute to impactful products.
+
+---
+
+## 🎓 Education
+
+| Institution | Degree | Year | GPA |
+|-------------|--------|------|-----|
+| **Lebanese International University (LIU)** | B.Sc. Computer Science | 1st Year Completed (2025–2026) | **3.42 / 4.0** |
+| **Lebanese Baccalaureate** | General Sciences | 2025 | **15.8 / 20 (Mention Bien)** |
 
 ---
 
@@ -29,8 +39,10 @@ Currently seeking a **Full-Time Software Engineering / Full Stack Developer posi
 | **Mobile** | Kotlin, Android (MVVM, Room DB, Retrofit, Navigation Component), React Native, Expo |
 | **Database** | MongoDB, Mongoose, Room Database |
 | **Desktop & Systems** | C++ (OOP), Python |
-| **AI & Machine Learning** | MediaPipe, OpenCV, NumPy, scikit-learn, Hand Gesture Recognition, ML Trading Models |
+| **AI & Machine Learning** | MediaPipe, OpenCV, NumPy, scikit-learn, OpenAI Whisper, Hand Gesture Recognition, ML Trading Models |
+| **AI Prompt Engineering** | AI Prompt Design, ChatGPT, LLM Integration |
 | **Trading & Finance** | MetaTrader5 API, Technical Analysis, Auto-Trading Bots, Telegram Signal Delivery |
+| **Embedded Systems** | Arduino, Sensors (Microphone, LDR, Push Button), LED Control, Traffic Light Systems |
 | **Robotics** | ROS2, roslib.js, Real-time Robot Control |
 | **3D Graphics** | OpenGL, Custom 3D Rendering Engines |
 | **Real-time & Cloud** | Socket.IO, Firebase, Cloudinary, Google OAuth 2.0, Leaflet Maps |
@@ -42,7 +54,7 @@ Currently seeking a **Full-Time Software Engineering / Full Stack Developer posi
 
 ## 📂 Project Portfolio
 
-> **17 completed projects** demonstrating expertise in full-stack development, AI, trading, robotics, and mobile development.
+> **21 completed projects** demonstrating expertise in full-stack development, AI, trading, embedded systems, robotics, and mobile development.
 
 ---
 
@@ -107,12 +119,29 @@ Currently seeking a **Full-Time Software Engineering / Full Stack Developer posi
 **Folder:** `amy music germany/`
 </details>
 
+<details>
+<summary><strong>5. IPTV World — Free Streaming & Live TV Platform</strong> &nbsp; <img src="https://img.shields.io/badge/Streaming-red?style=flat-square"/> <img src="https://img.shields.io/badge/SPA-blue?style=flat-square"/></summary>
+
+**Description:** A feature-rich streaming platform for watching movies, TV series, anime, and live TV channels — with watchlist management, multi-server video playback, global search, and a hash-based SPA router. Includes FIFA World Cup 2026 live match tracking.
+
+**Technical Highlights:**
+- Hash-based SPA routing with page navigation
+- Multi-server video playback integration (VidSrc, VidPlay, Embed)
+- API-driven content from TMDB (movies, series, anime)
+- Watchlist with local storage persistence
+- Live TV channel streaming with EPG-like navigation
+- Fully responsive design with dark mode
+
+**Tech:** `HTML5` `CSS3` `JavaScript` `TMDB API` `SPA Router` `LocalStorage`
+**Folder:** `iptv project/`
+</details>
+
 ---
 
 ### ⚙️ Full-Stack Applications
 
 <details>
-<summary><strong>5. HK Collection — E-Commerce Platform</strong> &nbsp; <img src="https://img.shields.io/badge/Full%20Stack-purple?style=flat-square"/></summary>
+<summary><strong>6. HK Collection — E-Commerce Platform</strong> &nbsp; <img src="https://img.shields.io/badge/Full%20Stack-purple?style=flat-square"/></summary>
 
 **Description:** A full-stack e-commerce platform with product catalog, category filtering, admin dashboard for product management, and a RESTful API backend.
 
@@ -127,7 +156,7 @@ Currently seeking a **Full-Time Software Engineering / Full Stack Developer posi
 </details>
 
 <details>
-<summary><strong>6. OLK Films — Movie Streaming Platform</strong> &nbsp; <img src="https://img.shields.io/badge/Full%20Stack-purple?style=flat-square"/></summary>
+<summary><strong>7. OLK Films — Movie Streaming Platform</strong> &nbsp; <img src="https://img.shields.io/badge/Full%20Stack-purple?style=flat-square"/></summary>
 
 **Description:** A modern movie streaming platform built with Next.js and TypeScript, featuring JWT authentication, user roles, server-side rendering, and a MongoDB backend.
 
@@ -142,7 +171,24 @@ Currently seeking a **Full-Time Software Engineering / Full Stack Developer posi
 </details>
 
 <details>
-<summary><strong>7. Badel w Bi3 — Local Marketplace Platform</strong> &nbsp; <img src="https://img.shields.io/badge/Full%20Stack-purple?style=flat-square"/> <img src="https://img.shields.io/badge/Arabic-RTL-blue?style=flat-square"/></summary>
+<summary><strong>8. Movies & Series — Next.js Streaming Platform</strong> &nbsp; <img src="https://img.shields.io/badge/Full%20Stack-purple?style=flat-square"/> <img src="https://img.shields.io/badge/Next.js%2016-black?style=flat-square"/></summary>
+
+**Description:** A full-stack movie and series streaming platform built with Next.js 16, React 19, and TypeScript. Features admin panel, content management, favorites system, search, and a MongoDB backend with JWT authentication.
+
+**Technical Highlights:**
+- Next.js 16 App Router with React 19
+- TypeScript with strict type safety
+- MongoDB with Mongoose (Content & Favorite models)
+- Admin dashboard for content CRUD
+- JWT authentication with bcrypt password hashing
+- TailwindCSS 4 for modern styling
+
+**Tech:** `Next.js 16` `React 19` `TypeScript` `TailwindCSS 4` `MongoDB` `JWT` `bcrypt`
+**Folder:** `Movies & Series/`
+</details>
+
+<details>
+<summary><strong>9. Badel w Bi3 — Local Marketplace Platform</strong> &nbsp; <img src="https://img.shields.io/badge/Full%20Stack-purple?style=flat-square"/> <img src="https://img.shields.io/badge/Arabic-RTL-blue?style=flat-square"/></summary>
 
 **Description:** A full-stack buy & sell marketplace (بدّل وبيع) with user authentication, ad management, admin dashboard, and comprehensive security — built as a PWA with SEO optimization.
 
@@ -158,7 +204,7 @@ Currently seeking a **Full-Time Software Engineering / Full Stack Developer posi
 </details>
 
 <details>
-<summary><strong>8. LIU Chat Bot — AI University Assistant</strong> &nbsp; <img src="https://img.shields.io/badge/Full%20Stack-purple?style=flat-square"/> <img src="https://img.shields.io/badge/Bilingual-EN%20|%20AR-green?style=flat-square"/></summary>
+<summary><strong>10. LIU Chat Bot — AI University Assistant</strong> &nbsp; <img src="https://img.shields.io/badge/Full%20Stack-purple?style=flat-square"/> <img src="https://img.shields.io/badge/Bilingual-EN%20|%20AR-green?style=flat-square"/></summary>
 
 **Description:** An AI-powered chatbot for Lebanese International University (LIU) students. Features a custom AI engine with a comprehensive knowledge base, user authentication, admin panel, and bilingual support (English & Arabic).
 
@@ -174,7 +220,7 @@ Currently seeking a **Full-Time Software Engineering / Full Stack Developer posi
 </details>
 
 <details>
-<summary><strong>9. ChatApp — WhatsApp-like Real-time Chat</strong> &nbsp; <img src="https://img.shields.io/badge/Full%20Stack-purple?style=flat-square"/> <img src="https://img.shields.io/badge/Real--time-Socket.IO-orange?style=flat-square"/></summary>
+<summary><strong>11. ChatApp — WhatsApp-like Real-time Chat</strong> &nbsp; <img src="https://img.shields.io/badge/Full%20Stack-purple?style=flat-square"/> <img src="https://img.shields.io/badge/Real--time-Socket.IO-orange?style=flat-square"/></summary>
 
 **Description:** A production-ready, WhatsApp-inspired real-time chat application with Google OAuth login, group chats, file sharing via Cloudinary, and live presence indicators — deployed 100% for free on Render.com.
 
@@ -192,7 +238,7 @@ Currently seeking a **Full-Time Software Engineering / Full Stack Developer posi
 </details>
 
 <details>
-<summary><strong>10. Lebanon Alert — Real-time Emergency Alert System</strong> &nbsp; <img src="https://img.shields.io/badge/Full%20Stack-purple?style=flat-square"/> <img src="https://img.shields.io/badge/Cross--Platform-Web%20+%20Mobile-red?style=flat-square"/></summary>
+<summary><strong>12. Lebanon Alert — Real-time Emergency Alert System</strong> &nbsp; <img src="https://img.shields.io/badge/Full%20Stack-purple?style=flat-square"/> <img src="https://img.shields.io/badge/Cross--Platform-Web%20+%20Mobile-red?style=flat-square"/></summary>
 
 **Description:** A full-stack, cross-platform emergency alert system for Lebanon featuring a Next.js web dashboard with interactive maps, a React Native mobile app with push notifications, and a Node.js backend with real-time alert aggregation, crowdsourced verification, and Firebase notifications.
 
@@ -213,7 +259,7 @@ Currently seeking a **Full-Time Software Engineering / Full Stack Developer posi
 ### 📱 Mobile Development
 
 <details>
-<summary><strong>11. My Favorite Quotes — Android App (Kotlin)</strong> &nbsp; <img src="https://img.shields.io/badge/Android-green?style=flat-square"/></summary>
+<summary><strong>13. My Favorite Quotes — Android App (Kotlin)</strong> &nbsp; <img src="https://img.shields.io/badge/Android-green?style=flat-square"/></summary>
 
 **Description:** A native Android application using MVVM architecture, Room database for local storage, Retrofit for API integration, and Navigation Component — with dark/light mode support.
 
@@ -225,7 +271,7 @@ Currently seeking a **Full-Time Software Engineering / Full Stack Developer posi
 - Dark & Light mode theme switching
 
 **Tech:** `Kotlin` `Android SDK` `MVVM` `Room DB` `Retrofit` `Navigation Component`
-**Folder:** `my first project kotlin/`
+**Folder:** `Kotlin App Project/`
 </details>
 
 ---
@@ -233,7 +279,7 @@ Currently seeking a **Full-Time Software Engineering / Full Stack Developer posi
 ### 🤖 Robotics & Systems
 
 <details>
-<summary><strong>12. Grid Robot Simulator — C++ Console Application</strong> &nbsp; <img src="https://img.shields.io/badge/C++-00599C?style=flat-square"/></summary>
+<summary><strong>14. Grid Robot Simulator — C++ Console Application</strong> &nbsp; <img src="https://img.shields.io/badge/C++-00599C?style=flat-square"/></summary>
 
 **Description:** A feature-rich C++ console application simulating a robot navigating a 2D grid. Includes WASD controls, obstacle placement, collision detection, trail tracking, and auto-patrol — with cross-platform support (Windows & Linux).
 
@@ -248,7 +294,7 @@ Currently seeking a **Full-Time Software Engineering / Full Stack Developer posi
 </details>
 
 <details>
-<summary><strong>13. ROS2 Robot Joystick Control Panel</strong> &nbsp; <img src="https://img.shields.io/badge/ROS2-22314E?style=flat-square"/> <img src="https://img.shields.io/badge/Robotics-orange?style=flat-square"/></summary>
+<summary><strong>15. ROS2 Robot Joystick Control Panel</strong> &nbsp; <img src="https://img.shields.io/badge/ROS2-22314E?style=flat-square"/> <img src="https://img.shields.io/badge/Robotics-orange?style=flat-square"/></summary>
 
 **Description:** A web-based ROS2 robot control interface with dual virtual joysticks, configurable speed presets, live camera feed, screenshot/recording capabilities, and keyboard shortcuts.
 
@@ -267,7 +313,7 @@ Currently seeking a **Full-Time Software Engineering / Full Stack Developer posi
 ### 🧠 AI, Computer Vision & Trading
 
 <details>
-<summary><strong>14. Air Writing & Eraser — Hand Gesture Recognition</strong> &nbsp; <img src="https://img.shields.io/badge/Computer%20Vision-blue?style=flat-square"/> <img src="https://img.shields.io/badge/AI-red?style=flat-square"/></summary>
+<summary><strong>16. Air Writing & Eraser — Hand Gesture Recognition</strong> &nbsp; <img src="https://img.shields.io/badge/Computer%20Vision-blue?style=flat-square"/> <img src="https://img.shields.io/badge/AI-red?style=flat-square"/></summary>
 
 **Description:** A high-performance air writing and eraser system using webcam-based hand gesture recognition. Draw in mid-air with your index finger and erase with an open palm — optimized with threaded camera capture for maximum FPS.
 
@@ -283,7 +329,7 @@ Currently seeking a **Full-Time Software Engineering / Full Stack Developer posi
 </details>
 
 <details>
-<summary><strong>15. AIOK Trading — AI-Powered XAUUSD Trading Intelligence</strong> &nbsp; <img src="https://img.shields.io/badge/AI%20Trading-gold?style=flat-square"/> <img src="https://img.shields.io/badge/Full%20Stack-purple?style=flat-square"/></summary>
+<summary><strong>17. AIOK Trading — AI-Powered XAUUSD Trading Intelligence</strong> &nbsp; <img src="https://img.shields.io/badge/AI%20Trading-gold?style=flat-square"/> <img src="https://img.shields.io/badge/Full%20Stack-purple?style=flat-square"/></summary>
 
 **Description:** An AI-powered gold (XAUUSD) trading intelligence system featuring a real-time dashboard with TradingView charts, multi-indicator confluence engine (RSI, MACD, Bollinger Bands, Ichimoku, EMA, Stochastic RSI, ATR, Volume), ML-based signal generation, auto-trading bot with risk management, and Telegram signal delivery.
 
@@ -300,12 +346,54 @@ Currently seeking a **Full-Time Software Engineering / Full Stack Developer posi
 **Folder:** `ai trading/`
 </details>
 
+<details>
+<summary><strong>18. Voice-to-Text Telegram Bot — Whisper Speech Recognition</strong> &nbsp; <img src="https://img.shields.io/badge/AI-red?style=flat-square"/> <img src="https://img.shields.io/badge/Telegram%20Bot-26A5E4?style=flat-square"/></summary>
+
+**Description:** A Telegram bot that converts voice messages and audio files to text using local OpenAI Whisper model. Supports 99+ languages with Arabic as the default — fully offline, no API costs.
+
+**Technical Highlights:**
+- OpenAI Whisper for local speech-to-text transcription
+- Supports voice messages + audio files (.mp3, .wav, .ogg, .m4a, .flac, .aac)
+- Multi-language support (99+ languages) with auto-detection
+- Configurable model sizes (tiny → large) for speed vs. accuracy tradeoff
+- FFmpeg audio processing pipeline
+- Telegram Bot API integration with command handling
+
+**Tech:** `Python` `OpenAI Whisper` `Telegram Bot API` `FFmpeg` `python-telegram-bot`
+**Folder:** `speech to text/`
+</details>
+
+---
+
+### 🔌 Embedded Systems & IoT
+
+<details>
+<summary><strong>19. Arduino Projects — Embedded Systems Collection</strong> &nbsp; <img src="https://img.shields.io/badge/Arduino-00979D?style=flat-square"/> <img src="https://img.shields.io/badge/IoT-orange?style=flat-square"/></summary>
+
+**Description:** A collection of 4 Arduino embedded systems projects demonstrating hardware-software integration, sensor interfacing, and digital I/O control.
+
+**Projects Included:**
+- **Traffic Light System** — Button-controlled LED with digital I/O
+- **First Project** — Basic Arduino setup and LED blink
+- **Light & Turn On** — LDR sensor-based automatic lighting
+- **Microphone & LED** — Sound-reactive LED control with analog microphone input
+
+**Technical Highlights:**
+- Digital and analog sensor interfacing
+- Push button interrupt handling
+- Sound-level detection with microphone module
+- Light-dependent resistor (LDR) automation
+
+**Tech:** `Arduino` `C/C++` `Sensors` `Digital I/O` `Analog Input`
+**Folder:** `arduino projects/`
+</details>
+
 ---
 
 ### 🏗️ 3D Graphics & Visualization
 
 <details>
-<summary><strong>16. 3D Object Viewer — Gesture-Controlled Viewer</strong> &nbsp; <img src="https://img.shields.io/badge/Desktop%20App-blue?style=flat-square"/></summary>
+<summary><strong>20. 3D Object Viewer — Gesture-Controlled Viewer</strong> &nbsp; <img src="https://img.shields.io/badge/Desktop%20App-blue?style=flat-square"/></summary>
 
 **Description:** A Python-based desktop application for viewing and interacting with 3D objects using gesture controls, with real-time rendering.
 
@@ -318,7 +406,7 @@ Currently seeking a **Full-Time Software Engineering / Full Stack Developer posi
 </details>
 
 <details>
-<summary><strong>17. 3D Home Renderer — Modular Visualization Engine</strong> &nbsp; <img src="https://img.shields.io/badge/Desktop%20App-blue?style=flat-square"/></summary>
+<summary><strong>21. 3D Home Renderer — Modular Visualization Engine</strong> &nbsp; <img src="https://img.shields.io/badge/Desktop%20App-blue?style=flat-square"/></summary>
 
 **Description:** A Python-powered 3D home model visualization and rendering application with a modular architecture (models, renderer, utils).
 
@@ -332,10 +420,11 @@ Currently seeking a **Full-Time Software Engineering / Full Stack Developer posi
 
 ---
 
-## 🎓 Certifications
+## 🏅 Certifications
 
 | Certificate | Issuer | Focus |
 |-------------|--------|-------|
+| **One Million Prompters** (مليون خبير للأوامر الذكاء الاصطناعي) | Dubai Future Foundation & Dubai Centre for AI | AI Prompt Engineering, LLM Systems, Future-ready AI Skills |
 | **Become an Android Developer** | SamDroid (Sam Shouman) | Kotlin, MVVM, Room DB, Retrofit, Navigation Component, Dark/Light Mode |
 
 ---
@@ -346,16 +435,18 @@ Currently seeking a **Full-Time Software Engineering / Full Stack Developer posi
 
 | Metric | Value |
 |--------|-------|
-| **Total Projects** | 17 |
-| **Web Applications** | 10 (4 Frontend + 6 Full-Stack) |
+| **Total Projects** | 21 |
+| **Web Applications** | 12 (5 Frontend + 7 Full-Stack) |
 | **Mobile Apps** | 2 (Android/Kotlin + React Native/Expo) |
 | **Robotics Projects** | 2 (C++ Simulator + ROS2 Control Panel) |
-| **AI / Computer Vision / Trading** | 2 (Hand Gesture Recognition + AI Trading Bot) |
+| **AI / CV / Trading** | 3 (Gesture Recognition + AI Trading + Speech-to-Text) |
+| **Embedded Systems** | 4 Arduino IoT Projects |
 | **3D Graphics** | 2 (Object Viewer + Home Renderer) |
-| **Languages Used** | 7 (JavaScript, TypeScript, Python, Kotlin, C++, HTML/CSS, Java) |
+| **Languages Used** | 8 (JavaScript, TypeScript, Python, Kotlin, C++, C, HTML/CSS, Arduino) |
 | **Frameworks** | Next.js, Express.js, React, React Native, Flask, Vite, TailwindCSS, Android SDK, Expo |
 | **Databases** | MongoDB, Room DB |
 | **Real-time** | Socket.IO, Firebase, WebSockets |
+| **University GPA** | 3.42 / 4.0 (LIU — CS) |
 
 </div>
 
@@ -372,7 +463,7 @@ cd Full-Stack
 cd "lebanon education"     # or any web project folder
 
 # Next.js projects
-cd "watching" && npm install && npm run dev
+cd "Movies & Series" && npm install && npm run dev
 cd "lebanon alert/web" && npm install && npm run dev
 
 # Node.js backend projects
@@ -387,6 +478,11 @@ cd "ai trading/backend"
 pip install -r requirements.txt
 python server.py
 
+# Speech-to-Text Telegram Bot
+cd "speech to text"
+pip install -r requirements.txt
+python bot.py
+
 # Python projects
 cd "writing and earaser python"
 pip install opencv-python mediapipe numpy
@@ -398,6 +494,9 @@ g++ robot_simulator.cpp -o robot_simulator && ./robot_simulator
 
 # Lebanon Alert Mobile (React Native / Expo)
 cd "lebanon alert/mobile" && npm install && npx expo start
+
+# Arduino projects — open .ino files in Arduino IDE
+cd "arduino projects/TrafficLightProject"
 ```
 
 ---

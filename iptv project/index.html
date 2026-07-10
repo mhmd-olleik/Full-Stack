@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IPTV World — Free Streaming, World Cup 2026 & Live TV</title>
+  <meta name="description" content="Watch free movies, TV shows, anime, live TV channels, and FIFA World Cup 2026 matches. Multiple servers, HD quality, no registration required.">
+  <meta name="keywords" content="IPTV, free streaming, World Cup 2026, movies, TV shows, live TV, anime, HD, 4K">
+  <meta name="theme-color" content="#0a0a0f">
+  <meta property="og:title" content="IPTV World — Free Streaming">
+  <meta property="og:description" content="Watch free movies, TV shows, anime, live TV channels, and FIFA World Cup 2026 matches.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📺</text></svg>">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <a href="#/" class="nav-brand">
+      <div class="brand-icon">📺</div>
+      <span>IPTV World</span>
+    </a>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#/" class="nav-link active" id="nav-home">
+        🏠 Home
+      </a>
+
+      <a href="#/movies" class="nav-link" id="nav-movies">
+        🎬 Movies
+      </a>
+      <a href="#/series" class="nav-link" id="nav-series">
+        📺 Series
+      </a>
+      <a href="#/anime" class="nav-link" id="nav-anime">
+        🎌 Anime
+      </a>
+      <a href="#/livetv" class="nav-link" id="nav-livetv">
+        📡 Live TV
+      </a>
+      <a href="#/watchlist" class="nav-link" id="nav-watchlist">
+        ⭐ Watchlist
+      </a>
+    </div>
+
+    <div class="nav-right">
+      <div class="nav-search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+        <input type="text" id="navSearchInput" placeholder="Search..." 
+               onkeydown="if(event.key==='Enter') App.doSearch(this.value)"
+               oninput="App.handleNavSearch(this)">
+      </div>
+
+      <button class="nav-mobile-toggle" id="mobileToggle" onclick="document.getElementById('navLinks').classList.toggle('open')">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-content" id="appContent">
+    <!-- Content rendered dynamically by app.js -->
+    <div class="container" style="padding-top:80px;">
+      <div class="spinner"></div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" id="appFooter">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand"><span>IPTV World</span></div>
+        <p class="footer-desc">
+          Your ultimate destination for free streaming. Watch movies, TV shows, anime, live TV channels, and FIFA World Cup 2026 matches — all in HD quality with multiple servers.
+          <br><br>
+          <small style="color:var(--text-muted);">This site does not store any files on our server. We only link to media hosted on 3rd party services.</small>
+        </p>
+      </div>
+      <div class="footer-section">
+        <h4>Browse</h4>
+        <a href="#/movies">Movies</a>
+        <a href="#/series">TV Series</a>
+        <a href="#/anime">Anime</a>
+        <a href="#/livetv">Live TV</a>
+
+      </div>
+      <div class="footer-section">
+        <h4>Categories</h4>
+        <a href="#/movies/28">Action</a>
+        <a href="#/movies/35">Comedy</a>
+        <a href="#/movies/27">Horror</a>
+        <a href="#/movies/878">Sci-Fi</a>
+        <a href="#/movies/10749">Romance</a>
+      </div>
+      <div class="footer-section">
+        <h4>More</h4>
+        <a href="#/watchlist">My Watchlist</a>
+        <a href="#/search">Search</a>
+        <a href="#/">Home</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>IPTV World © 2026. All Rights Reserved.</span>
+      <span>Made with ❤️ for streaming lovers</span>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </button>
+
+  <!-- HLS.js for M3U8 Live TV Streams -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+  <!-- Scripts (order matters) -->
+  <script src="js/storage.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/channels.js"></script>
+  <script src="js/player.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

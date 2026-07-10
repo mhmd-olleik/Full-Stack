@@ -1,0 +1,13 @@
+.env
+__pycache__/
+*.pyc
+temp_audio/
+*.ogg
+*.oga
+*.mp3
+*.wav
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
